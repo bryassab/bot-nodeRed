@@ -503,7 +503,8 @@
         "order": 1,
         "disp": false,
         "width": "6",
-        "collapse": false
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "59e42317.d932fc",
@@ -727,6 +728,25 @@
         "type": "ui_tab",
         "name": "Home",
         "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5511858fe3ea9be4",
+        "type": "ui_group",
+        "name": "Atlas",
+        "tab": "c6737baed7a0f212",
+        "order": 2,
+        "disp": true,
+        "width": 27,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c6737baed7a0f212",
+        "type": "ui_tab",
+        "name": "Cloud",
+        "icon": "cloud",
         "disabled": false,
         "hidden": false
     },
@@ -7527,7 +7547,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 830,
-        "y": 100,
+        "y": 60,
         "wires": [
             []
         ]
@@ -7542,7 +7562,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 160,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "50c166b41b67fa20"
@@ -7557,7 +7577,7 @@
         "statusCode": "",
         "headers": {},
         "x": 830,
-        "y": 340,
+        "y": 300,
         "wires": []
     },
     {
@@ -7575,7 +7595,7 @@
         "authType": "",
         "senderr": false,
         "x": 390,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "a3bb45e07d541dfe",
@@ -7611,23 +7631,13 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 170,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "fde09fe0.fefc8",
                 "02abcb30c3447b74"
             ]
         ]
-    },
-    {
-        "id": "a24fa4f1f96c0631",
-        "type": "comment",
-        "z": "e316d93c3900f83e",
-        "name": "PLEASE MODIFY THIS",
-        "info": "",
-        "x": 160,
-        "y": 60,
-        "wires": []
     },
     {
         "id": "50c166b41b67fa20",
@@ -7638,10 +7648,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{\n\t\"node_version\": \"node --version\",\n\t\"npm_version\": \"npm --version\",\n\t\"os_arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\t\"os_n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\t\"os_cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\t\"os_endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\t\"os_freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\t\"os_homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\t\"os_hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\t\"os_networkInterfaces\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\t\"os_platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\t\"os_release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\t\"os_totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\t\"os_uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\t\"os_userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\t\"os_type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\t\"os_version\": \"node -e \\\"console.log(require('os').version())\\\"\"\n}",
+        "template": "{\n\t\"node_ver\": \"node --version\",\n\t\"npm_ver\": \"npm --version\",\n\t\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\t\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\t\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\t\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\t\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\t\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\t\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\t\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\t\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\t\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\t\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\t\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\t\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\t\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\t\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\"\n}",
         "output": "json",
         "x": 380,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "3dd936804f7b8ce2"
@@ -7660,8 +7670,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 170,
-        "y": 420,
+        "x": 150,
+        "y": 380,
         "wires": [
             [
                 "503a7824fb95bd02"
@@ -7684,7 +7694,7 @@
         "stream": false,
         "addname": "topic",
         "x": 590,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "c1cb9d6016bd5e8c"
@@ -7708,7 +7718,7 @@
         "count": "",
         "reduceRight": false,
         "x": 590,
-        "y": 420,
+        "y": 380,
         "wires": [
             [
                 "92df760d20447d50",
@@ -7728,7 +7738,7 @@
         "tostatus": false,
         "complete": "false",
         "x": 850,
-        "y": 420,
+        "y": 380,
         "wires": []
     },
     {
@@ -7743,7 +7753,7 @@
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 420,
+        "y": 380,
         "wires": [
             [
                 "88c9495256dba3ba"
@@ -7762,7 +7772,7 @@
         "multi": false,
         "operation": "update",
         "x": 780,
-        "y": 500,
+        "y": 460,
         "wires": []
     },
     {
@@ -7806,7 +7816,7 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 500,
+        "y": 460,
         "wires": [
             [
                 "1b91140f1409886b"
@@ -7833,7 +7843,7 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 180,
+        "y": 140,
         "wires": [
             [
                 "ef29bce1145f629b"
@@ -7851,7 +7861,7 @@
         "overwriteFile": "false",
         "encoding": "none",
         "x": 620,
-        "y": 180,
+        "y": 140,
         "wires": [
             [
                 "115b349acad1eb7e"
@@ -7870,7 +7880,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 620,
-        "y": 260,
+        "y": 220,
         "wires": [
             [
                 "7f592676c0af9592",
@@ -7900,7 +7910,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 400,
-        "y": 260,
+        "y": 220,
         "wires": [
             [
                 "115b349acad1eb7e"
@@ -7920,7 +7930,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 850,
-        "y": 260,
+        "y": 220,
         "wires": []
     },
     {
@@ -7939,7 +7949,7 @@
         "templateScope": "local",
         "className": "",
         "x": 850,
-        "y": 180,
+        "y": 140,
         "wires": [
             []
         ]
@@ -7962,7 +7972,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 170,
-        "y": 260,
+        "y": 140,
         "wires": [
             [
                 "50c166b41b67fa20"
@@ -7989,7 +7999,7 @@
         "to": "",
         "reg": false,
         "x": 620,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "17cb2f52.423991"
@@ -8024,10 +8034,70 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 160,
-        "y": 140,
+        "y": 220,
         "wires": [
             [
                 "50c166b41b67fa20"
+            ]
+        ]
+    },
+    {
+        "id": "43554597fea3a1a0",
+        "type": "mongodb in",
+        "z": "e316d93c3900f83e",
+        "mongodb": "2bb8dfa0.48854",
+        "name": "",
+        "collection": "docker",
+        "operation": "find",
+        "x": 480,
+        "y": 540,
+        "wires": [
+            [
+                "074d11eb9877b29c"
+            ]
+        ]
+    },
+    {
+        "id": "074d11eb9877b29c",
+        "type": "ui_table",
+        "z": "e316d93c3900f83e",
+        "group": "5511858fe3ea9be4",
+        "name": "Docker comparatives",
+        "order": 2,
+        "width": 27,
+        "height": 7,
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 840,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "16b0b1c536272b4a",
+        "type": "ui_button",
+        "z": "e316d93c3900f83e",
+        "name": "",
+        "group": "5511858fe3ea9be4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Update",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 540,
+        "wires": [
+            [
+                "43554597fea3a1a0"
             ]
         ]
     }

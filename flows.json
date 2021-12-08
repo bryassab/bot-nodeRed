@@ -7514,9 +7514,9 @@
         "z": "e316d93c3900f83e",
         "mongodb": "2bb8dfa0.48854",
         "name": "",
-        "collection": "docker",
+        "collection": "cloud",
         "operation": "find",
-        "x": 480,
+        "x": 470,
         "y": 540,
         "wires": [
             [
@@ -7569,7 +7569,7 @@
         ]
     },
     {
-        "id": "a6334c0f2d8a47d3",
+        "id": "9947745a554576aa",
         "type": "ui_chart",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -7606,14 +7606,14 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 810,
+        "x": 790,
         "y": 140,
         "wires": [
             []
         ]
     },
     {
-        "id": "397f3404845e93cd",
+        "id": "94d0bbe872352b9f",
         "type": "http in",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -7621,27 +7621,27 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 160,
+        "x": 180,
         "y": 300,
         "wires": [
             [
-                "9d08631cceb36334"
+                "02e834f5d2373d8b"
             ]
         ]
     },
     {
-        "id": "20537042dacbce38",
+        "id": "a58d61b94eb4e6ac",
         "type": "http response",
         "z": "e316d93c3900f83e",
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 810,
+        "x": 790,
         "y": 380,
         "wires": []
     },
     {
-        "id": "4a4bb7c0124ae33d",
+        "id": "2f93d2dd972615bb",
         "type": "http request",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -7654,31 +7654,21 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 390,
+        "x": 410,
         "y": 140,
         "wires": [
             [
-                "8a7fcc4083dd7e3e",
-                "0576ef0d3651556e"
+                "0d35ba1172bb67d0",
+                "5ccbb805e7b02808"
             ]
         ]
     },
     {
-        "id": "a6d93c4964916bcd",
+        "id": "a34c283e613eeaa7",
         "type": "inject",
         "z": "e316d93c3900f83e",
         "name": "every hour",
         "props": [
-            {
-                "p": "link",
-                "v": "https://https://nodered-on-cloud.herokuapp.com",
-                "vt": "str"
-            },
-            {
-                "p": "name",
-                "v": "Heroku",
-                "vt": "str"
-            },
             {
                 "p": "time",
                 "v": "",
@@ -7690,17 +7680,17 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 170,
-        "y": 180,
+        "x": 190,
+        "y": 220,
         "wires": [
             [
-                "9d08631cceb36334",
-                "f6c5d9b5198098aa"
+                "01ef0ad01ef8add6",
+                "02e834f5d2373d8b"
             ]
         ]
     },
     {
-        "id": "9d08631cceb36334",
+        "id": "b22a6f0e92667003",
         "type": "template",
         "z": "e316d93c3900f83e",
         "name": "command list",
@@ -7710,16 +7700,16 @@
         "syntax": "mustache",
         "template": "{\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\"}",
         "output": "json",
-        "x": 390,
+        "x": 610,
         "y": 300,
         "wires": [
             [
-                "a1c2c9a3377d56cb"
+                "db5130832eac60bb"
             ]
         ]
     },
     {
-        "id": "191dee85122b890f",
+        "id": "4049c8b02c76a358",
         "type": "exec",
         "z": "e316d93c3900f83e",
         "command": "",
@@ -7730,20 +7720,20 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 150,
+        "x": 170,
         "y": 380,
         "wires": [
             [
-                "fb04ecd24d802b47"
+                "f809cbfdf26914ba"
             ],
             [
-                "fb04ecd24d802b47"
+                "f809cbfdf26914ba"
             ],
             []
         ]
     },
     {
-        "id": "a1c2c9a3377d56cb",
+        "id": "db5130832eac60bb",
         "type": "split",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -7753,16 +7743,16 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "topic",
-        "x": 610,
+        "x": 790,
         "y": 300,
         "wires": [
             [
-                "191dee85122b890f"
+                "4049c8b02c76a358"
             ]
         ]
     },
     {
-        "id": "2e4ce51460c54ea8",
+        "id": "befbc93eca9ef3c1",
         "type": "join",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -7777,17 +7767,17 @@
         "timeout": "",
         "count": "",
         "reduceRight": false,
-        "x": 610,
+        "x": 590,
         "y": 380,
         "wires": [
             [
-                "7e184b4323b9b379",
-                "20537042dacbce38"
+                "a58d61b94eb4e6ac",
+                "6d9aabd69a0bd1b8"
             ]
         ]
     },
     {
-        "id": "fb04ecd24d802b47",
+        "id": "f809cbfdf26914ba",
         "type": "function",
         "z": "e316d93c3900f83e",
         "name": "clear spaces",
@@ -7797,16 +7787,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
+        "x": 410,
         "y": 380,
         "wires": [
             [
-                "2e4ce51460c54ea8"
+                "befbc93eca9ef3c1"
             ]
         ]
     },
     {
-        "id": "169354c9d4ce1d81",
+        "id": "99be255ecd5a8e21",
         "type": "mongodb out",
         "z": "e316d93c3900f83e",
         "mongodb": "2bb8dfa0.48854",
@@ -7816,12 +7806,12 @@
         "upsert": true,
         "multi": false,
         "operation": "update",
-        "x": 710,
+        "x": 690,
         "y": 460,
         "wires": []
     },
     {
-        "id": "7e184b4323b9b379",
+        "id": "6d9aabd69a0bd1b8",
         "type": "change",
         "z": "e316d93c3900f83e",
         "name": "update Atlas",
@@ -7860,16 +7850,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 390,
+        "x": 410,
         "y": 460,
         "wires": [
             [
-                "169354c9d4ce1d81"
+                "99be255ecd5a8e21"
             ]
         ]
     },
     {
-        "id": "8a7fcc4083dd7e3e",
+        "id": "0d35ba1172bb67d0",
         "type": "change",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -7887,16 +7877,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 420,
         "y": 220,
         "wires": [
             [
-                "674d3a8569c65aa3"
+                "9804d2c8e7134748"
             ]
         ]
     },
     {
-        "id": "674d3a8569c65aa3",
+        "id": "9804d2c8e7134748",
         "type": "file",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -7905,19 +7895,19 @@
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 600,
+        "x": 620,
         "y": 220,
         "wires": [
             [
-                "423dfb079fc5d8f0"
+                "107476fce52293df"
             ]
         ]
     },
     {
-        "id": "0576ef0d3651556e",
+        "id": "5ccbb805e7b02808",
         "type": "change",
         "z": "e316d93c3900f83e",
-        "name": "",
+        "name": "get flow.name",
         "rules": [
             {
                 "t": "set",
@@ -7925,6 +7915,13 @@
                 "pt": "msg",
                 "to": "statusCode",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "name",
+                "tot": "flow"
             }
         ],
         "action": "",
@@ -7932,16 +7929,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
+        "x": 620,
         "y": 140,
         "wires": [
             [
-                "a6334c0f2d8a47d3"
+                "9947745a554576aa"
             ]
         ]
     },
     {
-        "id": "423dfb079fc5d8f0",
+        "id": "107476fce52293df",
         "type": "ui_text",
         "z": "e316d93c3900f83e",
         "group": "9ee91c1b.c2b67",
@@ -7953,12 +7950,12 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 790,
+        "x": 810,
         "y": 220,
         "wires": []
     },
     {
-        "id": "f6c5d9b5198098aa",
+        "id": "01ef0ad01ef8add6",
         "type": "delay",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -7974,17 +7971,17 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 390,
+        "x": 410,
         "y": 60,
         "wires": [
             [
-                "4a4bb7c0124ae33d",
-                "e3a86a3249f069a3"
+                "2f93d2dd972615bb",
+                "57ad8c0f6106c82d"
             ]
         ]
     },
     {
-        "id": "e3a86a3249f069a3",
+        "id": "57ad8c0f6106c82d",
         "type": "delay",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -8000,17 +7997,17 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 590,
+        "x": 610,
         "y": 60,
         "wires": [
             [
-                "4a4bb7c0124ae33d",
-                "dab576d14995e10d"
+                "2f93d2dd972615bb",
+                "cc67a8bf9ebbf696"
             ]
         ]
     },
     {
-        "id": "dab576d14995e10d",
+        "id": "cc67a8bf9ebbf696",
         "type": "delay",
         "z": "e316d93c3900f83e",
         "name": "",
@@ -8026,11 +8023,106 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 790,
+        "x": 810,
         "y": 60,
         "wires": [
             [
-                "4a4bb7c0124ae33d"
+                "2f93d2dd972615bb"
+            ]
+        ]
+    },
+    {
+        "id": "9977d17a4dc95278",
+        "type": "inject",
+        "z": "e316d93c3900f83e",
+        "name": "* CHANGE *",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "Heroku",
+        "payload": "https://nodered-on-cloud.herokuapp.com",
+        "payloadType": "str",
+        "x": 190,
+        "y": 60,
+        "wires": [
+            [
+                "4c7cde0a276d4f68"
+            ]
+        ]
+    },
+    {
+        "id": "4c7cde0a276d4f68",
+        "type": "change",
+        "z": "e316d93c3900f83e",
+        "name": "set flow vars",
+        "rules": [
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "flow",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "link",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 190,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "02e834f5d2373d8b",
+        "type": "change",
+        "z": "e316d93c3900f83e",
+        "name": "get flow vars",
+        "rules": [
+            {
+                "t": "set",
+                "p": "link",
+                "pt": "msg",
+                "to": "link",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "name",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 300,
+        "wires": [
+            [
+                "b22a6f0e92667003"
             ]
         ]
     }

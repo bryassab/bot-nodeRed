@@ -245,7 +245,9 @@
             "e3d1253d21cb8d14"
         ],
         "x": 14,
-        "y": 399
+        "y": 399,
+        "w": 392,
+        "h": 162
     },
     {
         "id": "8ae85c804dc630f2",
@@ -284,7 +286,9 @@
             "79211ed51f80c95c"
         ],
         "x": 434,
-        "y": 399
+        "y": 399,
+        "w": 192,
+        "h": 162
     },
     {
         "id": "930933373b4d5491",
@@ -2041,7 +2045,7 @@
         "z": "3827b8c0.6c5468",
         "g": "179da511.9a22fb",
         "name": "App Scripts",
-        "info": " - Script set in [Google App Scripts](https://script.google.com/home/)\n - Login with hybuild.project@gmail.com\n - Time check in code to bypass 0.00-6.00",
+        "info": " - Script set in [Google App Scripts](https://script.google.com/home/)\n - Login with hybuild.project@gmail.com\n - Time check in code to bypass 0.00-6.00\n\n<pre>\n// main.js\nfunction awake() {\n  if (new Date().getHours() > 6)\n    Logger.log(\"Response code: \" + ping().getResponseCode());\n  else\n    Logger.log(\"Ping skipped.\");\n}\n\nfunction ping() {\n  return UrlFetchApp.fetch(\"https://nodered-on-cloud.herokuapp.com/\");\n}\n\nfunction response() {\n  Logger.log(ping().getContentText());\n}\n</pre>",
         "x": 530,
         "y": 440,
         "wires": []

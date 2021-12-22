@@ -245,9 +245,7 @@
             "e3d1253d21cb8d14"
         ],
         "x": 14,
-        "y": 399,
-        "w": 392,
-        "h": 162
+        "y": 399
     },
     {
         "id": "8ae85c804dc630f2",
@@ -267,9 +265,7 @@
             "144cbd9489eb0a3a"
         ],
         "x": 54,
-        "y": 339,
-        "w": 412,
-        "h": 242
+        "y": 339
     },
     {
         "id": "179da511.9a22fb",
@@ -288,9 +284,7 @@
             "79211ed51f80c95c"
         ],
         "x": 434,
-        "y": 399,
-        "w": 192,
-        "h": 162
+        "y": 399
     },
     {
         "id": "930933373b4d5491",
@@ -306,9 +300,7 @@
             "0c979bf8879c11e2"
         ],
         "x": 54,
-        "y": 379,
-        "w": 572,
-        "h": 82
+        "y": 379
     },
     {
         "id": "7e6baf98.69239",
@@ -7905,7 +7897,7 @@
         "type": "file",
         "z": "e316d93c3900f83e",
         "name": "",
-        "filename": "activations.log",
+        "filename": "public/activations.log",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",

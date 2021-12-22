@@ -245,7 +245,9 @@
             "e3d1253d21cb8d14"
         ],
         "x": 14,
-        "y": 399
+        "y": 399,
+        "w": 392,
+        "h": 162
     },
     {
         "id": "8ae85c804dc630f2",
@@ -284,7 +286,9 @@
             "79211ed51f80c95c"
         ],
         "x": 434,
-        "y": 399
+        "y": 399,
+        "w": 192,
+        "h": 162
     },
     {
         "id": "930933373b4d5491",
@@ -1586,6 +1590,7 @@
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
+        "className": "",
         "x": 330,
         "y": 520,
         "wires": [
@@ -1757,7 +1762,7 @@
         "order": 6,
         "width": 4,
         "height": 1,
-        "format": "<footer>\n    by Alerox, 2021\n    &nbsp;\n    <img height=\"18\" alt=\"eng\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Engineering_logo.png/320px-Engineering_logo.png\"/>\n</footer>",
+        "format": "<footer>\n    by Alerox, 2021\n    &nbsp;\n    <img height=\"16\" alt=\"eng\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Engineering_logo.png/320px-Engineering_logo.png\"/>\n</footer>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -1779,11 +1784,12 @@
         "order": 7,
         "width": 2,
         "height": 1,
-        "format": "<links>\n    <a href=\"https://github.com/hybuild-project/nodered-heroku\" style=\"text-decoration: none;\">\n        <img height=\"22\" alt=\"github\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png\"/>\n    </a>\n    <a href=\"https://dashboard.heroku.com/apps/nodered-on-cloud\" style=\"text-decoration: none;\">\n        <img height=\"22\" alt=\"heroku\" src=\"https://status.heroku.com/images/apple-touch-icon-120x120-df4786699abad2c062b3126d2caa0655.png\"/>\n    </a>\n    <a href=\"../editor\" style=\"text-decoration: none;\">\n        <img height=\"22\" alt=\"nodered\" src=\"https://nodered.org/about/resources/media/node-red-icon.png\">\n    </a>\n</links>",
+        "format": "<links>\n    <a href=\" https://tinyurl.com/wakeup-nroc\" style=\"text-decoration: none;\">\n        <img height=\"16\" alt=\"apps script\" src=\"https://www.gstatic.com/script/apps_script_1x_24dp.png\"/>\n    </a>\n    <a href=\"https://github.com/hybuild-project/nodered-heroku\" style=\"text-decoration: none;\">\n        <img height=\"16\" alt=\"github\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png\"/>\n    </a>\n    <a href=\"https://dashboard.heroku.com/apps/nodered-on-cloud\" style=\"text-decoration: none;\">\n        <img height=\"16\" alt=\"heroku\" src=\"https://status.heroku.com/images/apple-touch-icon-120x120-df4786699abad2c062b3126d2caa0655.png\"/>\n    </a>\n    <a href=\"../editor\" style=\"text-decoration: none;\">\n        <img height=\"16\" alt=\"node-red\" src=\"https://nodered.org/about/resources/media/node-red-icon.png\">\n    </a>\n</links>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
+        "className": "",
         "x": 210,
         "y": 520,
         "wires": [

@@ -8,16 +8,16 @@
         "env": []
     },
     {
-        "id": "3827b8c0.6c5468",
+        "id": "cf48a4fe2aef05dc",
         "type": "tab",
-        "label": "Home + Hybuild",
+        "label": "Map + Netatmo",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "cf48a4fe2aef05dc",
+        "id": "3827b8c0.6c5468",
         "type": "tab",
-        "label": "Map + Netatmo",
+        "label": "Home + Hybuild",
         "disabled": false,
         "info": ""
     },
@@ -1221,6 +1221,506 @@
         ]
     },
     {
+        "id": "1714967f.e691ea",
+        "type": "inject",
+        "z": "cf48a4fe2aef05dc",
+        "d": true,
+        "name": "every 1h",
+        "props": [
+            {
+                "p": "headers",
+                "v": "{\"Authorization\":\"Bearer 60ad3104ead4d8526a0e9510|6945bd0e5d72adac51100b344cd5d58e\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payloadType": "str",
+        "x": 160,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b24ad2f.198453",
+        "type": "function",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "func": "// create position\nmsg.payload={\n    lat:35.153, \n    lon:33.397, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "3966d8a0.663828",
+                "90459018.96315"
+            ]
+        ]
+    },
+    {
+        "id": "de3a90c8.8179c",
+        "type": "ui_button",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "group": "b22ef8f6de170fbc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Aglantzia",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "1b24ad2f.198453"
+            ]
+        ]
+    },
+    {
+        "id": "223f301c.54ea9",
+        "type": "comment",
+        "z": "cf48a4fe2aef05dc",
+        "name": "How to embed Map in Dashboard",
+        "info": "This example shows how to embed the Worldmap \nwithin the `node-red-dashboard`\n\nThe  flow creates a dashboard button that \ngenerates a randon position, with the required \nicon, and passes that to the worldmap. The\nmap is configured to automatically pan to the\nposition of any point that arrives.\n",
+        "x": 210,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "243b5eceef79ce35",
+        "type": "function",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "func": "// create position\nmsg.payload={\n    lat:41.305, \n    lon:0.427, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "3966d8a0.663828",
+                "90459018.96315"
+            ]
+        ]
+    },
+    {
+        "id": "ef9a423f9dc55393",
+        "type": "ui_button",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "group": "b22ef8f6de170fbc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Almatret",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "243b5eceef79ce35"
+            ]
+        ]
+    },
+    {
+        "id": "56b6733667baf154",
+        "type": "ui_button",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "group": "b22ef8f6de170fbc",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Langenwang",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "db4d22135dd63675"
+            ]
+        ]
+    },
+    {
+        "id": "e92df1f4ce1ee69a",
+        "type": "ui_button",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "group": "b22ef8f6de170fbc",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Palermo",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "d0a88c96f0eb8df7"
+            ]
+        ]
+    },
+    {
+        "id": "db4d22135dd63675",
+        "type": "function",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "func": "// create position\nmsg.payload={\n    lat:47.568, \n    lon:15.615, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 100,
+        "wires": [
+            [
+                "3966d8a0.663828",
+                "90459018.96315"
+            ]
+        ]
+    },
+    {
+        "id": "d0a88c96f0eb8df7",
+        "type": "function",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "func": "// create position\nmsg.payload={\n    lat:38.117, \n    lon:13.367, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "3966d8a0.663828",
+                "90459018.96315"
+            ]
+        ]
+    },
+    {
+        "id": "01b856875e0d074d",
+        "type": "http request",
+        "z": "cf48a4fe2aef05dc",
+        "g": "930933373b4d5491",
+        "name": "/oauth2/token",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.netatmo.com/oauth2/token",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "b66d4f3e1d27c77d"
+            ]
+        ]
+    },
+    {
+        "id": "b66d4f3e1d27c77d",
+        "type": "debug",
+        "z": "cf48a4fe2aef05dc",
+        "g": "930933373b4d5491",
+        "name": "Netatmo",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "0c979bf8879c11e2",
+        "type": "inject",
+        "z": "cf48a4fe2aef05dc",
+        "g": "930933373b4d5491",
+        "name": "every 2h",
+        "props": [
+            {
+                "p": "headers",
+                "v": "{\"Content-Type\":\"application/x-www-form-urlencoded\"}",
+                "vt": "json"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "7200",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"grant_type\":\"refresh_token\",\"client_id\":\"60ad31c6b9cc5228023a7860\",\"client_secret\":\"NEdg4BQFfMMitHVaR64O7KHZdgaLF40KP1yrtGU19OjA\",\"refresh_token\":\"60ad3104ead4d8526a0e9510|a6fc000a3d9d2dcc573cccb9f2596c34\"}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "01b856875e0d074d"
+            ]
+        ]
+    },
+    {
+        "id": "0c550dcd627c0c5f",
+        "type": "http request",
+        "z": "cf48a4fe2aef05dc",
+        "name": "/getstationsdata",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.netatmo.com/api/getstationsdata?get_favorites=false",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "bearer",
+        "senderr": false,
+        "x": 340,
+        "y": 340,
+        "wires": [
+            [
+                "d16b31a35ad7985a",
+                "212ba746cdc89b95"
+            ]
+        ]
+    },
+    {
+        "id": "6d274fd0533363ac",
+        "type": "ui_template",
+        "z": "cf48a4fe2aef05dc",
+        "group": "15dfb40eb8a9110b",
+        "name": "textarea",
+        "order": 6,
+        "width": 6,
+        "height": "10",
+        "format": "<textarea rows=\"120\">{{msg.payload}}</textarea>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 660,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d16b31a35ad7985a",
+        "type": "yaml",
+        "z": "cf48a4fe2aef05dc",
+        "property": "payload",
+        "name": "",
+        "x": 510,
+        "y": 340,
+        "wires": [
+            [
+                "6d274fd0533363ac"
+            ]
+        ]
+    },
+    {
+        "id": "212ba746cdc89b95",
+        "type": "change",
+        "z": "cf48a4fe2aef05dc",
+        "name": "temp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.body.devices[0].dashboard_data.Temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 280,
+        "wires": [
+            [
+                "8afa42165746db14"
+            ]
+        ]
+    },
+    {
+        "id": "8afa42165746db14",
+        "type": "ui_chart",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "group": "b22ef8f6de170fbc",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "{{msg.payload}} ýC",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "90459018.96315",
+        "type": "ui_worldmap",
+        "z": "cf48a4fe2aef05dc",
+        "group": "15dfb40eb8a9110b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSM",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "true",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "true",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 580,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3966d8a0.663828",
+        "type": "worldmap-tracks",
+        "z": "cf48a4fe2aef05dc",
+        "name": "",
+        "depth": "5",
+        "layer": "combined",
+        "smooth": false,
+        "x": 510,
+        "y": 40,
+        "wires": [
+            [
+                "90459018.96315"
+            ]
+        ]
+    },
+    {
+        "id": "c9e10b44.9e6d58",
+        "type": "comment",
+        "z": "cf48a4fe2aef05dc",
+        "name": "bearer token",
+        "info": "60ad3104ead4d8526a0e9510|6945bd0e5d72adac51100b344cd5d58e",
+        "x": 330,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "828886288d7170f4",
+        "type": "inject",
+        "z": "cf48a4fe2aef05dc",
+        "name": "every 5m",
+        "props": [],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "0c550dcd627c0c5f"
+            ]
+        ]
+    },
+    {
         "id": "60b78e88.8ae0e",
         "type": "comment",
         "z": "3827b8c0.6c5468",
@@ -1783,7 +2283,7 @@
         "order": 7,
         "width": 2,
         "height": 1,
-        "format": "<links>\n    <a href=\"https://tinsyurl.com/wakeup-heroku\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"appscripts\" src=\"https://www.gstatic.com/script/apps_script_1x_24dp.png\"/>\n    </a>\n    <a href=\"https://github.com/hybuild-project/nodered-heroku\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"github\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png\"/>\n    </a>\n    <a href=\"https://dashboard.heroku.com/apps/nodered-on-cloud\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"heroku\" src=\"https://status.heroku.com/images/apple-touch-icon-120x120-df4786699abad2c062b3126d2caa0655.png\"/>\n    </a>\n    <a href=\"../editor\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"nodered\" src=\"https://nodered.org/about/resources/media/node-red-icon.png\">\n    </a>\n</links>",
+        "format": "<links>\n    <a href=\"https://tinyurl.com/wakeup-heroku\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"appscripts\" src=\"https://www.gstatic.com/script/apps_script_1x_24dp.png\"/>\n    </a>\n    <a href=\"https://github.com/hybuild-project/nodered-heroku\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"github\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png\"/>\n    </a>\n    <a href=\"https://dashboard.heroku.com/apps/nodered-on-cloud\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"heroku\" src=\"https://status.heroku.com/images/apple-touch-icon-120x120-df4786699abad2c062b3126d2caa0655.png\"/>\n    </a>\n    <a href=\"../editor\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"nodered\" src=\"https://nodered.org/about/resources/media/node-red-icon.png\">\n    </a>\n</links>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -2099,506 +2599,6 @@
         "wires": [
             [
                 "fb011e12fcbb8a4a"
-            ]
-        ]
-    },
-    {
-        "id": "1714967f.e691ea",
-        "type": "inject",
-        "z": "cf48a4fe2aef05dc",
-        "d": true,
-        "name": "every 1h",
-        "props": [
-            {
-                "p": "headers",
-                "v": "{\"Authorization\":\"Bearer 60ad3104ead4d8526a0e9510|6945bd0e5d72adac51100b344cd5d58e\"}",
-                "vt": "json"
-            }
-        ],
-        "repeat": "3600",
-        "crontab": "",
-        "once": false,
-        "onceDelay": "",
-        "topic": "",
-        "payloadType": "str",
-        "x": 160,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1b24ad2f.198453",
-        "type": "function",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "func": "// create position\nmsg.payload={\n    lat:35.153, \n    lon:33.397, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 220,
-        "wires": [
-            [
-                "3966d8a0.663828",
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "de3a90c8.8179c",
-        "type": "ui_button",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Aglantzia",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 160,
-        "y": 220,
-        "wires": [
-            [
-                "1b24ad2f.198453"
-            ]
-        ]
-    },
-    {
-        "id": "223f301c.54ea9",
-        "type": "comment",
-        "z": "cf48a4fe2aef05dc",
-        "name": "How to embed Map in Dashboard",
-        "info": "This example shows how to embed the Worldmap \nwithin the `node-red-dashboard`\n\nThe  flow creates a dashboard button that \ngenerates a randon position, with the required \nicon, and passes that to the worldmap. The\nmap is configured to automatically pan to the\nposition of any point that arrives.\n",
-        "x": 210,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "243b5eceef79ce35",
-        "type": "function",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "func": "// create position\nmsg.payload={\n    lat:41.305, \n    lon:0.427, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 180,
-        "wires": [
-            [
-                "3966d8a0.663828",
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "ef9a423f9dc55393",
-        "type": "ui_button",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Almatret",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 160,
-        "y": 180,
-        "wires": [
-            [
-                "243b5eceef79ce35"
-            ]
-        ]
-    },
-    {
-        "id": "56b6733667baf154",
-        "type": "ui_button",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Langenwang",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 170,
-        "y": 100,
-        "wires": [
-            [
-                "db4d22135dd63675"
-            ]
-        ]
-    },
-    {
-        "id": "e92df1f4ce1ee69a",
-        "type": "ui_button",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Palermo",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 160,
-        "y": 140,
-        "wires": [
-            [
-                "d0a88c96f0eb8df7"
-            ]
-        ]
-    },
-    {
-        "id": "db4d22135dd63675",
-        "type": "function",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "func": "// create position\nmsg.payload={\n    lat:47.568, \n    lon:15.615, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 100,
-        "wires": [
-            [
-                "3966d8a0.663828",
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "d0a88c96f0eb8df7",
-        "type": "function",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "func": "// create position\nmsg.payload={\n    lat:38.117, \n    lon:13.367, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 140,
-        "wires": [
-            [
-                "3966d8a0.663828",
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "01b856875e0d074d",
-        "type": "http request",
-        "z": "cf48a4fe2aef05dc",
-        "g": "930933373b4d5491",
-        "name": "/oauth2/token",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "https://api.netatmo.com/oauth2/token",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 340,
-        "y": 420,
-        "wires": [
-            [
-                "b66d4f3e1d27c77d"
-            ]
-        ]
-    },
-    {
-        "id": "b66d4f3e1d27c77d",
-        "type": "debug",
-        "z": "cf48a4fe2aef05dc",
-        "g": "930933373b4d5491",
-        "name": "Netatmo",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "0c979bf8879c11e2",
-        "type": "inject",
-        "z": "cf48a4fe2aef05dc",
-        "g": "930933373b4d5491",
-        "name": "every 2h",
-        "props": [
-            {
-                "p": "headers",
-                "v": "{\"Content-Type\":\"application/x-www-form-urlencoded\"}",
-                "vt": "json"
-            },
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "7200",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"grant_type\":\"refresh_token\",\"client_id\":\"60ad31c6b9cc5228023a7860\",\"client_secret\":\"NEdg4BQFfMMitHVaR64O7KHZdgaLF40KP1yrtGU19OjA\",\"refresh_token\":\"60ad3104ead4d8526a0e9510|a6fc000a3d9d2dcc573cccb9f2596c34\"}",
-        "payloadType": "json",
-        "x": 160,
-        "y": 420,
-        "wires": [
-            [
-                "01b856875e0d074d"
-            ]
-        ]
-    },
-    {
-        "id": "0c550dcd627c0c5f",
-        "type": "http request",
-        "z": "cf48a4fe2aef05dc",
-        "name": "/getstationsdata",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "https://api.netatmo.com/api/getstationsdata?get_favorites=false",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "bearer",
-        "senderr": false,
-        "x": 340,
-        "y": 340,
-        "wires": [
-            [
-                "d16b31a35ad7985a",
-                "212ba746cdc89b95"
-            ]
-        ]
-    },
-    {
-        "id": "6d274fd0533363ac",
-        "type": "ui_template",
-        "z": "cf48a4fe2aef05dc",
-        "group": "15dfb40eb8a9110b",
-        "name": "textarea",
-        "order": 6,
-        "width": 6,
-        "height": "10",
-        "format": "<textarea rows=\"120\">{{msg.payload}}</textarea>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "x": 660,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d16b31a35ad7985a",
-        "type": "yaml",
-        "z": "cf48a4fe2aef05dc",
-        "property": "payload",
-        "name": "",
-        "x": 510,
-        "y": 340,
-        "wires": [
-            [
-                "6d274fd0533363ac"
-            ]
-        ]
-    },
-    {
-        "id": "212ba746cdc89b95",
-        "type": "change",
-        "z": "cf48a4fe2aef05dc",
-        "name": "temp",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.body.devices[0].dashboard_data.Temperature",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 510,
-        "y": 280,
-        "wires": [
-            [
-                "8afa42165746db14"
-            ]
-        ]
-    },
-    {
-        "id": "8afa42165746db14",
-        "type": "ui_chart",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "label": "{{msg.payload}} ýC",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 650,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "90459018.96315",
-        "type": "ui_worldmap",
-        "z": "cf48a4fe2aef05dc",
-        "group": "15dfb40eb8a9110b",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "lat": "",
-        "lon": "",
-        "zoom": "",
-        "layer": "OSM",
-        "cluster": "",
-        "maxage": "",
-        "usermenu": "show",
-        "layers": "show",
-        "panit": "true",
-        "panlock": "false",
-        "zoomlock": "false",
-        "hiderightclick": "true",
-        "coords": "none",
-        "showgrid": "true",
-        "allowFileDrop": "false",
-        "path": "/worldmap",
-        "mapname": "",
-        "mapurl": "",
-        "mapopt": "",
-        "mapwms": false,
-        "x": 580,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "3966d8a0.663828",
-        "type": "worldmap-tracks",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "depth": "5",
-        "layer": "combined",
-        "smooth": false,
-        "x": 510,
-        "y": 40,
-        "wires": [
-            [
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "c9e10b44.9e6d58",
-        "type": "comment",
-        "z": "cf48a4fe2aef05dc",
-        "name": "bearer token",
-        "info": "60ad3104ead4d8526a0e9510|6945bd0e5d72adac51100b344cd5d58e",
-        "x": 330,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "828886288d7170f4",
-        "type": "inject",
-        "z": "cf48a4fe2aef05dc",
-        "name": "every 5m",
-        "props": [],
-        "repeat": "300",
-        "crontab": "",
-        "once": false,
-        "onceDelay": "",
-        "topic": "",
-        "x": 170,
-        "y": 340,
-        "wires": [
-            [
-                "0c550dcd627c0c5f"
             ]
         ]
     },

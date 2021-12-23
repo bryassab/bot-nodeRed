@@ -285,9 +285,9 @@
             "35e33f2c9202fe92",
             "79211ed51f80c95c"
         ],
-        "x": 434,
+        "x": 424,
         "y": 399,
-        "w": 192,
+        "w": 202,
         "h": 162
     },
     {
@@ -1783,7 +1783,7 @@
         "order": 7,
         "width": 2,
         "height": 1,
-        "format": "<links>\n    <a href=\"tinyurl.com/wakeup-heroku\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"appscripts\" src=\"https://www.gstatic.com/script/apps_script_1x_24dp.png\"/>\n    </a>\n    <a href=\"https://github.com/hybuild-project/nodered-heroku\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"github\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png\"/>\n    </a>\n    <a href=\"https://dashboard.heroku.com/apps/nodered-on-cloud\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"heroku\" src=\"https://status.heroku.com/images/apple-touch-icon-120x120-df4786699abad2c062b3126d2caa0655.png\"/>\n    </a>\n    <a href=\"../editor\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"nodered\" src=\"https://nodered.org/about/resources/media/node-red-icon.png\">\n    </a>\n</links>",
+        "format": "<links>\n    <a href=\"https://tinsyurl.com/wakeup-heroku\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"appscripts\" src=\"https://www.gstatic.com/script/apps_script_1x_24dp.png\"/>\n    </a>\n    <a href=\"https://github.com/hybuild-project/nodered-heroku\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"github\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png\"/>\n    </a>\n    <a href=\"https://dashboard.heroku.com/apps/nodered-on-cloud\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"heroku\" src=\"https://status.heroku.com/images/apple-touch-icon-120x120-df4786699abad2c062b3126d2caa0655.png\"/>\n    </a>\n    <a href=\"../editor\" style=\"text-decoration: none;\">\n        <img height=\"18\" alt=\"nodered\" src=\"https://nodered.org/about/resources/media/node-red-icon.png\">\n    </a>\n</links>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,

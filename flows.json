@@ -54,7 +54,7 @@
     {
         "id": "e316d93c3900f83e",
         "type": "tab",
-        "label": "Testbed (MOD)",
+        "label": "Cloud",
         "disabled": false,
         "info": "",
         "env": []
@@ -245,9 +245,7 @@
             "e3d1253d21cb8d14"
         ],
         "x": 14,
-        "y": 399,
-        "w": 392,
-        "h": 162
+        "y": 399
     },
     {
         "id": "8ae85c804dc630f2",
@@ -267,9 +265,7 @@
             "144cbd9489eb0a3a"
         ],
         "x": 54,
-        "y": 339,
-        "w": 412,
-        "h": 242
+        "y": 339
     },
     {
         "id": "179da511.9a22fb",
@@ -288,9 +284,7 @@
             "79211ed51f80c95c"
         ],
         "x": 434,
-        "y": 399,
-        "w": 192,
-        "h": 162
+        "y": 399
     },
     {
         "id": "930933373b4d5491",
@@ -306,9 +300,7 @@
             "0c979bf8879c11e2"
         ],
         "x": 54,
-        "y": 379,
-        "w": 572,
-        "h": 82
+        "y": 379
     },
     {
         "id": "7e6baf98.69239",
@@ -741,34 +733,13 @@
         "hidden": false
     },
     {
-        "id": "d5e969071433182e",
-        "type": "ui_spacer",
-        "z": "3c1975f87cd0cabf",
-        "name": "spacer",
-        "group": "5511858fe3ea9be4",
-        "order": 2,
-        "width": 21,
-        "height": 1
-    },
-    {
-        "id": "7ad73a4834705039",
-        "type": "ui_spacer",
-        "z": "3c1975f87cd0cabf",
-        "name": "spacer",
-        "group": "5511858fe3ea9be4",
-        "order": 4,
-        "width": 21,
-        "height": 1
-    },
-    {
-        "id": "f15424fb60659eec",
-        "type": "ui_spacer",
-        "z": "3c1975f87cd0cabf",
-        "name": "spacer",
-        "group": "5511858fe3ea9be4",
-        "order": 7,
-        "width": 21,
-        "height": 1
+        "id": "c7082c22c6d48864",
+        "type": "ui_link",
+        "name": "Activations log",
+        "link": "../activations.log",
+        "icon": "description",
+        "target": "iframe",
+        "order": 9
     },
     {
         "id": "5eb0bd6b.74b794",
@@ -7558,8 +7529,8 @@
         "name": "",
         "collection": "cloud",
         "operation": "find",
-        "x": 610,
-        "y": 540,
+        "x": 510,
+        "y": 80,
         "wires": [
             [
                 "074d11eb9877b29c"
@@ -7578,8 +7549,8 @@
         "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 910,
-        "y": 540,
+        "x": 810,
+        "y": 80,
         "wires": []
     },
     {
@@ -7602,8 +7573,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 300,
-        "y": 540,
+        "x": 200,
+        "y": 80,
         "wires": [
             [
                 "43554597fea3a1a0"
@@ -7616,7 +7587,7 @@
         "z": "e316d93c3900f83e",
         "name": "",
         "group": "5511858fe3ea9be4",
-        "order": 8,
+        "order": 3,
         "width": "6",
         "height": "4",
         "label": "{{name}}",
@@ -7648,8 +7619,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 910,
-        "y": 100,
+        "x": 810,
+        "y": 240,
         "wires": [
             []
         ]
@@ -7663,13 +7634,11 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 300,
-        "y": 260,
+        "x": 200,
+        "y": 320,
         "wires": [
             [
-                "10b59caa8ec597a6",
-                "f9e916c4c3fce602",
-                "bb75d4e6d3170370"
+                "10b59caa8ec597a6"
             ]
         ]
     },
@@ -7680,32 +7649,9 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 910,
-        "y": 340,
+        "x": 810,
+        "y": 400,
         "wires": []
-    },
-    {
-        "id": "1287d0f6046fec04",
-        "type": "http request",
-        "z": "e316d93c3900f83e",
-        "name": "",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "{{{link}}}/test",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 530,
-        "y": 100,
-        "wires": [
-            [
-                "f9e916c4c3fce602",
-                "bb75d4e6d3170370"
-            ]
-        ]
     },
     {
         "id": "a1b7918c33e2c20c",
@@ -7718,8 +7664,8 @@
         "syntax": "mustache",
         "template": "{\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\"}",
         "output": "json",
-        "x": 730,
-        "y": 260,
+        "x": 630,
+        "y": 320,
         "wires": [
             [
                 "ff605e746f51658e"
@@ -7738,8 +7684,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 290,
-        "y": 340,
+        "x": 190,
+        "y": 400,
         "wires": [
             [
                 "cf6d11d4436e6581"
@@ -7761,8 +7707,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "topic",
-        "x": 910,
-        "y": 260,
+        "x": 810,
+        "y": 320,
         "wires": [
             [
                 "e1d90dc98e32397a"
@@ -7785,8 +7731,8 @@
         "timeout": "",
         "count": "",
         "reduceRight": false,
-        "x": 710,
-        "y": 340,
+        "x": 610,
+        "y": 400,
         "wires": [
             [
                 "60d0d7d27e81c50b",
@@ -7805,8 +7751,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 340,
+        "x": 430,
+        "y": 400,
         "wires": [
             [
                 "99a9b74c36f1a735"
@@ -7824,8 +7770,8 @@
         "upsert": true,
         "multi": false,
         "operation": "update",
-        "x": 810,
-        "y": 440,
+        "x": 710,
+        "y": 500,
         "wires": []
     },
     {
@@ -7868,8 +7814,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
-        "y": 420,
+        "x": 430,
+        "y": 480,
         "wires": [
             [
                 "3f4cdd30ddf653be"
@@ -7886,7 +7832,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$fromMillis(time, \"[D01]/[M01]/[Y0001] [H01]:[m01]:[s01] \", \"+0100\") & statusCode",
+                "to": "$fromMillis(time, \"[D01]/[M01]/[Y0001] [H01]:[m01]:[s01]\\tcall from appscripts\\t\", \"+0100\") & payload",
                 "tot": "jsonata"
             }
         ],
@@ -7895,8 +7841,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
-        "y": 180,
+        "x": 440,
+        "y": 160,
         "wires": [
             [
                 "057c63d4d0fb2684"
@@ -7913,8 +7859,8 @@
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 740,
-        "y": 180,
+        "x": 640,
+        "y": 160,
         "wires": [
             [
                 "6bb78b38c0851dd5"
@@ -7926,7 +7872,7 @@
         "type": "ui_text",
         "z": "e316d93c3900f83e",
         "group": "5511858fe3ea9be4",
-        "order": 6,
+        "order": 4,
         "width": 6,
         "height": 1,
         "name": "",
@@ -7934,92 +7880,29 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 910,
-        "y": 180,
+        "x": 810,
+        "y": 160,
         "wires": []
-    },
-    {
-        "id": "5f3e95e6b4a827b1",
-        "type": "inject",
-        "z": "e316d93c3900f83e",
-        "d": true,
-        "name": "every 5 min",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "*/5 0-23 * * *",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "Heroku",
-        "payload": "https://nodered-on-cloud.herokuapp.com",
-        "payloadType": "str",
-        "x": 110,
-        "y": 80,
-        "wires": [
-            [
-                "7d2ca299993c2c87",
-                "5b4c66ea835ac2d7"
-            ]
-        ]
-    },
-    {
-        "id": "7d2ca299993c2c87",
-        "type": "change",
-        "z": "e316d93c3900f83e",
-        "name": "set flow vars",
-        "rules": [
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "flow",
-                "to": "topic",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "link",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 100,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "10b59caa8ec597a6",
         "type": "change",
         "z": "e316d93c3900f83e",
-        "name": "get flow vars",
+        "name": "",
         "rules": [
             {
                 "t": "set",
                 "p": "link",
                 "pt": "msg",
-                "to": "link",
-                "tot": "flow"
+                "to": "https://nodered-on-cloud.herokuapp.com/",
+                "tot": "str"
             },
             {
                 "t": "set",
                 "p": "name",
                 "pt": "msg",
-                "to": "name",
-                "tot": "flow"
+                "to": "Heroku",
+                "tot": "str"
             },
             {
                 "t": "set",
@@ -8027,6 +7910,13 @@
                 "pt": "msg",
                 "to": "",
                 "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$random()",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -8034,11 +7924,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
-        "y": 260,
+        "x": 440,
+        "y": 320,
         "wires": [
             [
-                "a1b7918c33e2c20c"
+                "a1b7918c33e2c20c",
+                "f9e916c4c3fce602",
+                "bb75d4e6d3170370"
             ]
         ]
     },
@@ -8052,47 +7944,6 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "statusCode",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 740,
-        "y": 100,
-        "wires": [
-            [
-                "952b9ceb96ed8511"
-            ]
-        ]
-    },
-    {
-        "id": "5b4c66ea835ac2d7",
-        "type": "change",
-        "z": "e316d93c3900f83e",
-        "name": "get flow vars",
-        "rules": [
-            {
-                "t": "set",
-                "p": "link",
-                "pt": "msg",
-                "to": "link",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "name",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "time",
-                "pt": "msg",
                 "to": "",
                 "tot": "date"
             }
@@ -8102,11 +7953,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
-        "y": 180,
+        "x": 640,
+        "y": 240,
         "wires": [
             [
-                "1287d0f6046fec04"
+                "952b9ceb96ed8511"
             ]
         ]
     },
@@ -8127,8 +7978,8 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 310,
-        "y": 420,
+        "x": 210,
+        "y": 480,
         "wires": [
             [
                 "a6100fdc373857a1"
@@ -8140,7 +7991,7 @@
         "type": "ui_text",
         "z": "e316d93c3900f83e",
         "group": "5511858fe3ea9be4",
-        "order": 3,
+        "order": 2,
         "width": 6,
         "height": 1,
         "name": "",
@@ -8148,8 +7999,8 @@
         "format": "<a href=\"https://charts.mongodb.com/charts-project-0-ldowu/dashboards/72d2c3bd-f1ac-4a97-9d07-bed2b13f2426\">https://charts.mongodb.com/charts-project-0-ldowu</a>",
         "layout": "row-spread",
         "className": "",
-        "x": 110,
-        "y": 540,
+        "x": 210,
+        "y": 160,
         "wires": []
     }
 ]

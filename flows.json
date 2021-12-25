@@ -7832,7 +7832,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$fromMillis(time, \"[D01]/[M01]/[Y0001] [H01]:[m01]:[s01]\\tcall from appscripts\\t\", \"+0100\") & payload",
+                "to": "$fromMillis(time, \"[D01]/[M01]/[Y0001] [H01]:[m01]:[s01]\\text. call\", \"+0100\")",
                 "tot": "jsonata"
             }
         ],

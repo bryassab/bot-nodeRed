@@ -239,9 +239,7 @@
             "144cbd9489eb0a3a"
         ],
         "x": 54,
-        "y": 339,
-        "w": 412,
-        "h": 242
+        "y": 339
     },
     {
         "id": "f936a74110b9b914",
@@ -1186,7 +1184,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Dashboard: https://node-red-on-cloud.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com/apps/node-red-on-cloud\nHome: Node-RED: https://node-red-on-cloud.herokuapp.com\nNode-RED: https://node-red-on-cloud.herokuapp.com/editor",
+        "template": "Dashboard: https://node-red-on-cloud.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com\nHome: https://node-red-on-cloud.herokuapp.com\nNode-RED: https://node-red-on-cloud.herokuapp.com/editor",
         "output": "str",
         "x": 720,
         "y": 360,

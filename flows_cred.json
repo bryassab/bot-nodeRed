@@ -1,9 +1,4 @@
 {
-    "a8d2d040.73334": {},
-    "01b856875e0d074d": {},
-    "0c550dcd627c0c5f": {
-        "password": "${NETATMO_BEARER}"
-    },
     "ee20ae5266a5e32c": {
         "token": "${BOT_TOKEN}"
     },

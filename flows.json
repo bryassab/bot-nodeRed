@@ -245,7 +245,9 @@
             "e3d1253d21cb8d14"
         ],
         "x": 14,
-        "y": 399
+        "y": 399,
+        "w": 392,
+        "h": 162
     },
     {
         "id": "8ae85c804dc630f2",
@@ -284,7 +286,9 @@
             "79211ed51f80c95c"
         ],
         "x": 424,
-        "y": 399
+        "y": 399,
+        "w": 202,
+        "h": 162
     },
     {
         "id": "930933373b4d5491",
@@ -1988,7 +1992,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Dashboard: https://nodered-on-cloud.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com/apps/nodered-on-cloud\nNode-RED: https://nodered-on-cloud.herokuapp.com/editor",
+        "template": "Dashboard: https://node-red-on-cloud.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com/apps/node-red-on-cloud\nNode-RED: https://node-red-on-cloud.herokuapp.com/editor",
         "output": "str",
         "x": 900,
         "y": 340,

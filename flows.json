@@ -15,13 +15,6 @@
         "info": ""
     },
     {
-        "id": "cf48a4fe2aef05dc",
-        "type": "tab",
-        "label": "Map",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "41cb18232e7c1de3",
         "type": "tab",
         "label": "Exercise",
@@ -239,7 +232,9 @@
             "144cbd9489eb0a3a"
         ],
         "x": 54,
-        "y": 339
+        "y": 339,
+        "w": 412,
+        "h": 242
     },
     {
         "id": "f936a74110b9b914",
@@ -282,15 +277,6 @@
         "y": 419,
         "w": 192,
         "h": 162
-    },
-    {
-        "id": "85a5817c.1b7c5",
-        "type": "ui_tab",
-        "name": "HYBUILD",
-        "icon": "dashboard",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "a14f81bfbb849ce6",
@@ -438,17 +424,6 @@
         "hidden": false
     },
     {
-        "id": "b22ef8f6de170fbc",
-        "type": "ui_group",
-        "name": "Locations",
-        "tab": "62110531d2bada68",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
         "id": "bf61264521fde63b",
         "type": "ui_link",
         "name": "Editor",
@@ -580,16 +555,6 @@
         "name": "Mobile",
         "tab": "b63d1f91.68095",
         "order": 5,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "15dfb40eb8a9110b",
-        "type": "ui_group",
-        "name": "Netatmo",
-        "tab": "62110531d2bada68",
-        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -2513,257 +2478,6 @@
         ]
     },
     {
-        "id": "1b24ad2f.198453",
-        "type": "function",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "func": "// create position\nmsg.payload={\n    lat:35.153, \n    lon:33.397, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 220,
-        "wires": [
-            [
-                "3966d8a0.663828",
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "de3a90c8.8179c",
-        "type": "ui_button",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Aglantzia",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 160,
-        "y": 220,
-        "wires": [
-            [
-                "1b24ad2f.198453"
-            ]
-        ]
-    },
-    {
-        "id": "223f301c.54ea9",
-        "type": "comment",
-        "z": "cf48a4fe2aef05dc",
-        "name": "How to embed Map in Dashboard",
-        "info": "This example shows how to embed the Worldmap \nwithin the `node-red-dashboard`\n\nThe  flow creates a dashboard button that \ngenerates a randon position, with the required \nicon, and passes that to the worldmap. The\nmap is configured to automatically pan to the\nposition of any point that arrives.\n",
-        "x": 210,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "243b5eceef79ce35",
-        "type": "function",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "func": "// create position\nmsg.payload={\n    lat:41.305, \n    lon:0.427, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 180,
-        "wires": [
-            [
-                "3966d8a0.663828",
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "ef9a423f9dc55393",
-        "type": "ui_button",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Almatret",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 160,
-        "y": 180,
-        "wires": [
-            [
-                "243b5eceef79ce35"
-            ]
-        ]
-    },
-    {
-        "id": "56b6733667baf154",
-        "type": "ui_button",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Langenwang",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 170,
-        "y": 100,
-        "wires": [
-            [
-                "db4d22135dd63675"
-            ]
-        ]
-    },
-    {
-        "id": "e92df1f4ce1ee69a",
-        "type": "ui_button",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "group": "b22ef8f6de170fbc",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Palermo",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 160,
-        "y": 140,
-        "wires": [
-            [
-                "d0a88c96f0eb8df7"
-            ]
-        ]
-    },
-    {
-        "id": "db4d22135dd63675",
-        "type": "function",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "func": "// create position\nmsg.payload={\n    lat:47.568, \n    lon:15.615, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 100,
-        "wires": [
-            [
-                "3966d8a0.663828",
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "d0a88c96f0eb8df7",
-        "type": "function",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "func": "// create position\nmsg.payload={\n    lat:38.117, \n    lon:13.367, \n    name:\"Alice\", \n    icon:\"female\", \n    color:\"#000\"};\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 140,
-        "wires": [
-            [
-                "3966d8a0.663828",
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
-        "id": "90459018.96315",
-        "type": "ui_worldmap",
-        "z": "cf48a4fe2aef05dc",
-        "group": "15dfb40eb8a9110b",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "lat": "",
-        "lon": "",
-        "zoom": "",
-        "layer": "OSM",
-        "cluster": "",
-        "maxage": "",
-        "usermenu": "show",
-        "layers": "show",
-        "panit": "true",
-        "panlock": "false",
-        "zoomlock": "false",
-        "hiderightclick": "true",
-        "coords": "none",
-        "showgrid": "true",
-        "allowFileDrop": "false",
-        "path": "/worldmap",
-        "mapname": "",
-        "mapurl": "",
-        "mapopt": "",
-        "mapwms": false,
-        "x": 580,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "3966d8a0.663828",
-        "type": "worldmap-tracks",
-        "z": "cf48a4fe2aef05dc",
-        "name": "",
-        "depth": "5",
-        "layer": "combined",
-        "smooth": false,
-        "x": 510,
-        "y": 40,
-        "wires": [
-            [
-                "90459018.96315"
-            ]
-        ]
-    },
-    {
         "id": "d21b9139cec20e2e",
         "type": "ui_button",
         "z": "41cb18232e7c1de3",
@@ -4587,7 +4301,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "Heroku",
-        "payload": "https://nodered-on-cloud.herokuapp.com",
+        "payload": "https://node-red-on-cloud.herokuapp.com",
         "payloadType": "str",
         "x": 110,
         "y": 60,

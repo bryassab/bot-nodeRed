@@ -286,26 +286,6 @@
         "h": 162
     },
     {
-        "id": "7e6baf98.69239",
-        "type": "ui_group",
-        "name": "Global check",
-        "tab": "85a5817c.1b7c5",
-        "order": 1,
-        "disp": false,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "f1bf23af235c0dc2",
-        "type": "ui_group",
-        "name": "Response",
-        "tab": "85a5817c.1b7c5",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": true
-    },
-    {
         "id": "85a5817c.1b7c5",
         "type": "ui_tab",
         "name": "HYBUILD",
@@ -615,17 +595,6 @@
         "disp": true,
         "width": "6",
         "collapse": false
-    },
-    {
-        "id": "739f3ba4668cb4d8",
-        "type": "ui_group",
-        "name": "Links",
-        "tab": "85a5817c.1b7c5",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
     },
     {
         "id": "ee20ae5266a5e32c",

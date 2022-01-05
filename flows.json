@@ -670,7 +670,7 @@
         "id": "9c09e087.a48e7",
         "type": "http request",
         "z": "3c1975f87cd0cabf",
-        "name": "PUT",
+        "name": "PUT /contents/filename",
         "method": "PUT",
         "ret": "obj",
         "paytoqs": "ignore",
@@ -680,7 +680,7 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 590,
+        "x": 650,
         "y": 280,
         "wires": [
             [
@@ -714,7 +714,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
+        "x": 890,
         "y": 220,
         "wires": [
             [
@@ -726,7 +726,7 @@
         "id": "ba9ea225.c2fbe",
         "type": "http request",
         "z": "3c1975f87cd0cabf",
-        "name": "GET",
+        "name": "GET /contents/filename",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
@@ -736,7 +736,7 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 590,
+        "x": 650,
         "y": 100,
         "wires": [
             [
@@ -801,7 +801,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 870,
+        "x": 890,
         "y": 280,
         "wires": []
     },
@@ -816,7 +816,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 860,
+        "x": 880,
         "y": 160,
         "wires": [
             [
@@ -836,7 +836,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 870,
+        "x": 890,
         "y": 100,
         "wires": []
     },
@@ -934,7 +934,7 @@
         "topic": "",
         "payload": "${AUTHORIZATION_HEADER}",
         "payloadType": "str",
-        "x": 870,
+        "x": 890,
         "y": 40,
         "wires": [
             [
@@ -1107,7 +1107,7 @@
         "z": "3c1975f87cd0cabf",
         "name": "Github",
         "info": "[https://github.com/hybuild-project/nodered-heroku](https://github.com/hybuild-project/nodered-heroku)",
-        "x": 850,
+        "x": 870,
         "y": 460,
         "wires": []
     },
@@ -1117,7 +1117,7 @@
         "z": "3c1975f87cd0cabf",
         "name": "Telegram",
         "info": "Heroku bot token:\n2097247350:AAEtDqTY526PqidDoOlmcwXdkReEZLjmmug\n\nChat ID:\n1269409529\n---\nTrashed\n2097247350:AAHvGZR34e34Y0MjKtvFRFLs1qcysirD2rA\n\n",
-        "x": 860,
+        "x": 880,
         "y": 540,
         "wires": []
     },
@@ -1127,7 +1127,7 @@
         "z": "3c1975f87cd0cabf",
         "name": "Heroku",
         "info": "[https://dashboard.heroku.com/apps/nodered-on-cloud](https://dashboard.heroku.com/apps/nodered-on-cloud)",
-        "x": 850,
+        "x": 870,
         "y": 500,
         "wires": []
     },
@@ -1135,18 +1135,19 @@
         "id": "6318f51cb383430b",
         "type": "template",
         "z": "3c1975f87cd0cabf",
-        "name": "",
+        "name": "links",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
         "template": "Dashboard: https://node-red-on-cloud.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com\nHome: https://node-red-on-cloud.herokuapp.com\nNode-RED: https://node-red-on-cloud.herokuapp.com/editor",
         "output": "str",
-        "x": 720,
+        "x": 750,
         "y": 360,
         "wires": [
             [
-                "1fe71abb8d5f24c3"
+                "1fe71abb8d5f24c3",
+                "3a70eaf0a97e5cd9"
             ]
         ]
     },
@@ -1159,8 +1160,8 @@
         "command": "/start",
         "commandType": "str",
         "commandCase": false,
-        "x": 590,
-        "y": 360,
+        "x": 630,
+        "y": 380,
         "wires": [
             [
                 "6318f51cb383430b"
@@ -1176,8 +1177,8 @@
         "chatId": "",
         "message": "",
         "parseMode": "",
-        "x": 880,
-        "y": 360,
+        "x": 900,
+        "y": 380,
         "wires": []
     },
     {
@@ -1362,6 +1363,34 @@
         "info": " - [Kaffeine](https://kaffeine.herokuapp.com/) keeps alive Heroku dynos\n - Every 30 minutes from 6.00 to 23.59\n - Heroku free dyno limit: 550 hours/mounth",
         "x": 610,
         "y": 500,
+        "wires": []
+    },
+    {
+        "id": "0d7282cf46b0f6bd",
+        "type": "http in",
+        "z": "3c1975f87cd0cabf",
+        "name": "",
+        "url": "/wakeup",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "6318f51cb383430b"
+            ]
+        ]
+    },
+    {
+        "id": "3a70eaf0a97e5cd9",
+        "type": "http response",
+        "z": "3c1975f87cd0cabf",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 870,
+        "y": 340,
         "wires": []
     },
     {
@@ -4011,12 +4040,12 @@
         "type": "http in",
         "z": "d405d0aa94060361",
         "name": "",
-        "url": "/wakeup",
+        "url": "/test",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 310,
-        "y": 240,
+        "x": 300,
+        "y": 260,
         "wires": [
             [
                 "dbfc1491fb39250d"
@@ -4042,7 +4071,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "{{{link}}}/wakeup",
+        "url": "{{{link}}}/test",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -4207,7 +4236,8 @@
         "y": 400,
         "wires": [
             [
-                "8c9e9307acdfc516"
+                "8c9e9307acdfc516",
+                "bd0f758305a91f3c"
             ]
         ]
     },
@@ -4486,7 +4516,7 @@
         "multi": false,
         "operation": "update",
         "x": 810,
-        "y": 420,
+        "y": 440,
         "wires": []
     },
     {
@@ -4660,6 +4690,36 @@
                 "45ec4bd081761a2e"
             ]
         ]
+    },
+    {
+        "id": "188f35ed7717a84a",
+        "type": "telegrambot-command",
+        "z": "d405d0aa94060361",
+        "name": "/os-stats",
+        "bot": "ee20ae5266a5e32c",
+        "command": "/os-stats",
+        "commandType": "str",
+        "commandCase": false,
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "dbfc1491fb39250d"
+            ]
+        ]
+    },
+    {
+        "id": "bd0f758305a91f3c",
+        "type": "telegrambot-notify",
+        "z": "d405d0aa94060361",
+        "name": "",
+        "bot": "ee20ae5266a5e32c",
+        "chatId": "",
+        "message": "",
+        "parseMode": "",
+        "x": 740,
+        "y": 380,
+        "wires": []
     },
     {
         "id": "d3ccd3e3.2545a",

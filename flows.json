@@ -4042,7 +4042,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "{{{link}}}/test",
+        "url": "{{{link}}}/wakeup",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -4656,7 +4656,8 @@
         "y": 60,
         "wires": [
             [
-                "f7219f063811fec2"
+                "f7219f063811fec2",
+                "45ec4bd081761a2e"
             ]
         ]
     },

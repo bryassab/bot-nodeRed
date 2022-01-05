@@ -4011,11 +4011,11 @@
         "type": "http in",
         "z": "d405d0aa94060361",
         "name": "",
-        "url": "/test",
+        "url": "/wakeup",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 300,
+        "x": 310,
         "y": 240,
         "wires": [
             [
@@ -4272,37 +4272,6 @@
         "x": 910,
         "y": 160,
         "wires": []
-    },
-    {
-        "id": "46397713e08f728a",
-        "type": "inject",
-        "z": "d405d0aa94060361",
-        "d": true,
-        "name": "every 5 min",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "*/5 0-23 * * *",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "Heroku",
-        "payload": "https://node-red-on-cloud.herokuapp.com",
-        "payloadType": "str",
-        "x": 110,
-        "y": 60,
-        "wires": [
-            [
-                "f7219f063811fec2",
-                "45ec4bd081761a2e"
-            ]
-        ]
     },
     {
         "id": "f7219f063811fec2",
@@ -4661,6 +4630,35 @@
         "x": 910,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "46397713e08f728a",
+        "type": "inject",
+        "z": "d405d0aa94060361",
+        "name": "every 5 min",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "*/5 0-23 * * *",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "Heroku",
+        "payload": "https://node-red-on-cloud.herokuapp.com",
+        "payloadType": "str",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "f7219f063811fec2"
+            ]
+        ]
     },
     {
         "id": "d3ccd3e3.2545a",

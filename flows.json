@@ -415,15 +415,6 @@
         "collapse": false
     },
     {
-        "id": "62110531d2bada68",
-        "type": "ui_tab",
-        "name": "Map",
-        "icon": "map",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "bf61264521fde63b",
         "type": "ui_link",
         "name": "Editor",
@@ -4286,6 +4277,7 @@
         "id": "46397713e08f728a",
         "type": "inject",
         "z": "d405d0aa94060361",
+        "d": true,
         "name": "every 5 min",
         "props": [
             {

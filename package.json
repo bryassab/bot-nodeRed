@@ -32,6 +32,7 @@
         "node-red-contrib-opcua": "latest",
         "node-red-contrib-postgresql": "latest",
         "node-red-contrib-qrcode-generator": "latest",
+        "node-red-contrib-re-postgres": "~0.3.3",
         "node-red-contrib-string": "latest",
         "node-red-contrib-telegrambot-home": "latest",
         "node-red-contrib-ui-led": "latest",

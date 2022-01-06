@@ -229,11 +229,12 @@
             "5e4932e4fd58aefa",
             "5cd1f84172efed80",
             "8ff958a673b8f0be",
-            "144cbd9489eb0a3a"
+            "144cbd9489eb0a3a",
+            "625dabfe20b68fb0"
         ],
         "x": 54,
         "y": 339,
-        "w": 412,
+        "w": 432,
         "h": 242
     },
     {
@@ -1524,7 +1525,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nodered-on-cloud.herokuapp.com/sensor",
+        "url": "http://nric-temp.herokuapp.com/sensor",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -1547,11 +1548,12 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nodered-on-cloud.herokuapp.com/counter",
+        "url": "http://nric-temp.herokuapp.com/counter",
         "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
+        "senderr": false,
         "x": 630,
         "y": 480,
         "wires": [
@@ -1569,11 +1571,12 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nodered-on-cloud.herokuapp.com/heartbeat",
+        "url": "http://nric-temp.herokuapp.com/heartbeat",
         "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
+        "senderr": false,
         "x": 640,
         "y": 540,
         "wires": [
@@ -1706,7 +1709,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nodered-on-cloud.herokuapp.com/sinusoid",
+        "url": "http://nric-temp.herokuapp.com/sinusoid",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -2048,11 +2051,12 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nodered-on-cloud.herokuapp.com/alarm",
+        "url": "http://nric-temp.herokuapp.com/alarm",
         "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
+        "senderr": false,
         "x": 630,
         "y": 420,
         "wires": [
@@ -2108,7 +2112,7 @@
         "props": [
             {
                 "p": "payload.api",
-                "v": "https://nodered-on-cloud.herokuapp.com/sinusoid",
+                "v": "https://node-red-in-cloud.herokuapp.com/sinusoid",
                 "vt": "str"
             },
             {
@@ -2122,12 +2126,11 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payloadType": "str",
         "x": 160,
         "y": 380,
         "wires": [
             [
-                "144cbd9489eb0a3a"
+                "625dabfe20b68fb0"
             ]
         ]
     },
@@ -2140,7 +2143,7 @@
         "props": [
             {
                 "p": "payload.api",
-                "v": "https://nodered-on-cloud.herokuapp.com/sensor",
+                "v": "https://node-red-in-cloud.herokuapp.com/sensor",
                 "vt": "str"
             },
             {
@@ -2158,7 +2161,7 @@
         "y": 420,
         "wires": [
             [
-                "144cbd9489eb0a3a"
+                "625dabfe20b68fb0"
             ]
         ]
     },
@@ -2171,7 +2174,7 @@
         "props": [
             {
                 "p": "payload.api",
-                "v": "https://nodered-on-cloud.herokuapp.com/counter",
+                "v": "https://node-red-in-cloud.herokuapp.com/counter",
                 "vt": "str"
             },
             {
@@ -2189,7 +2192,7 @@
         "y": 500,
         "wires": [
             [
-                "144cbd9489eb0a3a"
+                "625dabfe20b68fb0"
             ]
         ]
     },
@@ -2202,7 +2205,7 @@
         "props": [
             {
                 "p": "payload.api",
-                "v": "https://nodered-on-cloud.herokuapp.com/heartbeat",
+                "v": "https://node-red-in-cloud.herokuapp.com/heartbeat",
                 "vt": "str"
             },
             {
@@ -2220,7 +2223,7 @@
         "y": 540,
         "wires": [
             [
-                "144cbd9489eb0a3a"
+                "625dabfe20b68fb0"
             ]
         ]
     },
@@ -2233,7 +2236,7 @@
         "props": [
             {
                 "p": "payload.api",
-                "v": "https://nodered-on-cloud.herokuapp.com/alarm",
+                "v": "https://node-red-in-cloud.herokuapp.com/alarm",
                 "vt": "str"
             },
             {
@@ -2251,7 +2254,7 @@
         "y": 460,
         "wires": [
             [
-                "144cbd9489eb0a3a"
+                "625dabfe20b68fb0"
             ]
         ]
     },
@@ -2468,6 +2471,26 @@
         "wires": [
             [
                 "21202713015fcd6a"
+            ]
+        ]
+    },
+    {
+        "id": "625dabfe20b68fb0",
+        "type": "function",
+        "z": "cdd0d95b0f6f8604",
+        "g": "8ae85c804dc630f2",
+        "name": "ELIMINA a regime",
+        "func": "msg.payload = msg.payload.replace(\"node-red-in-cloud\", \"nric-temp\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "144cbd9489eb0a3a"
             ]
         ]
     },

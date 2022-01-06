@@ -623,8 +623,8 @@
     {
         "id": "c7082c22c6d48864",
         "type": "ui_link",
-        "name": "Activations log",
-        "link": "../activations.log",
+        "name": "Activations",
+        "link": "../activate.log",
         "icon": "description",
         "target": "iframe",
         "order": 9
@@ -670,7 +670,7 @@
         "id": "9c09e087.a48e7",
         "type": "http request",
         "z": "3c1975f87cd0cabf",
-        "name": "PUT /contents/filename",
+        "name": "PUT (GitHub)",
         "method": "PUT",
         "ret": "obj",
         "paytoqs": "ignore",
@@ -680,7 +680,7 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 650,
+        "x": 620,
         "y": 280,
         "wires": [
             [
@@ -714,7 +714,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
+        "x": 870,
         "y": 220,
         "wires": [
             [
@@ -726,7 +726,7 @@
         "id": "ba9ea225.c2fbe",
         "type": "http request",
         "z": "3c1975f87cd0cabf",
-        "name": "GET /contents/filename",
+        "name": "GET (GitHub)",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
@@ -736,7 +736,7 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 650,
+        "x": 620,
         "y": 100,
         "wires": [
             [
@@ -784,9 +784,9 @@
         "type": "comment",
         "z": "3c1975f87cd0cabf",
         "name": "GitHub Token",
-        "info": "Set GITHUB_TOKEN in [Heroku Config Vars](https://dashboard.heroku.com/apps/nodered-on-cloud/settings).\nSee [Personal access tokens](https://github.com/settings/tokens) page (repo).",
-        "x": 110,
-        "y": 280,
+        "info": "Set GITHUB_TOKEN in [Heroku Config Vars](https://dashboard.heroku.com/apps/nric-temp/settings).\nSee [Personal access tokens](https://github.com/settings/tokens) page (repo).",
+        "x": 370,
+        "y": 40,
         "wires": []
     },
     {
@@ -801,7 +801,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
+        "x": 870,
         "y": 280,
         "wires": []
     },
@@ -816,7 +816,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 880,
+        "x": 860,
         "y": 160,
         "wires": [
             [
@@ -836,7 +836,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
+        "x": 870,
         "y": 100,
         "wires": []
     },
@@ -934,7 +934,7 @@
         "topic": "",
         "payload": "${AUTHORIZATION_HEADER}",
         "payloadType": "str",
-        "x": 890,
+        "x": 870,
         "y": 40,
         "wires": [
             [
@@ -961,8 +961,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 40,
+        "x": 360,
+        "y": 120,
         "wires": [
             [
                 "ae8ddf10.868fd"
@@ -988,8 +988,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
-        "y": 140,
+        "x": 380,
+        "y": 160,
         "wires": [
             [
                 "ae8ddf10.868fd"
@@ -1000,14 +1000,14 @@
         "id": "7a7584df89bbce4a",
         "type": "inject",
         "z": "3c1975f87cd0cabf",
-        "name": "SAVE",
+        "name": "SAVE ALL",
         "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 110,
+        "x": 120,
         "y": 40,
         "wires": [
             [
@@ -1021,15 +1021,15 @@
         "id": "354462253c0f942f",
         "type": "inject",
         "z": "3c1975f87cd0cabf",
-        "name": "push to GitHub",
+        "name": "SAVE",
         "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 340,
-        "y": 80,
+        "x": 110,
+        "y": 120,
         "wires": [
             [
                 "f92e1e8dffe158f7"
@@ -1040,15 +1040,15 @@
         "id": "a549d342fd99909d",
         "type": "inject",
         "z": "3c1975f87cd0cabf",
-        "name": "push to GitHub",
+        "name": "SAVE",
         "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 340,
-        "y": 180,
+        "x": 110,
+        "y": 160,
         "wires": [
             [
                 "98b5b9035834b822"
@@ -1059,15 +1059,15 @@
         "id": "2d16cee553d899ee",
         "type": "inject",
         "z": "3c1975f87cd0cabf",
-        "name": "push to GitHub",
+        "name": "SAVE",
         "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 340,
-        "y": 280,
+        "x": 110,
+        "y": 200,
         "wires": [
             [
                 "71c40b7254660299"
@@ -1093,8 +1093,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
-        "y": 240,
+        "x": 370,
+        "y": 200,
         "wires": [
             [
                 "ae8ddf10.868fd"
@@ -1106,8 +1106,8 @@
         "type": "comment",
         "z": "3c1975f87cd0cabf",
         "name": "Github",
-        "info": "[https://github.com/hybuild-project/nodered-heroku](https://github.com/hybuild-project/nodered-heroku)",
-        "x": 870,
+        "info": "https://github.com/hybuild-project/nodered-heroku",
+        "x": 850,
         "y": 460,
         "wires": []
     },
@@ -1116,8 +1116,8 @@
         "type": "comment",
         "z": "3c1975f87cd0cabf",
         "name": "Telegram",
-        "info": "Heroku bot token:\n2097247350:AAEtDqTY526PqidDoOlmcwXdkReEZLjmmug\n\nChat ID:\n1269409529\n---\nTrashed\n2097247350:AAHvGZR34e34Y0MjKtvFRFLs1qcysirD2rA\n\n",
-        "x": 880,
+        "info": "Heroku bot token:\n${BOT_TOKEN}\n\nChat ID:\n1269409529",
+        "x": 860,
         "y": 540,
         "wires": []
     },
@@ -1126,8 +1126,8 @@
         "type": "comment",
         "z": "3c1975f87cd0cabf",
         "name": "Heroku",
-        "info": "[https://dashboard.heroku.com/apps/nodered-on-cloud](https://dashboard.heroku.com/apps/nodered-on-cloud)",
-        "x": 870,
+        "info": "https://dashboard.heroku.com/apps/nric-temp",
+        "x": 850,
         "y": 500,
         "wires": []
     },
@@ -1135,19 +1135,18 @@
         "id": "6318f51cb383430b",
         "type": "template",
         "z": "3c1975f87cd0cabf",
-        "name": "links",
+        "name": "",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
         "template": "Dashboard: https://node-red-on-cloud.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com\nHome: https://node-red-on-cloud.herokuapp.com\nNode-RED: https://node-red-on-cloud.herokuapp.com/editor",
         "output": "str",
-        "x": 750,
+        "x": 720,
         "y": 360,
         "wires": [
             [
-                "1fe71abb8d5f24c3",
-                "3a70eaf0a97e5cd9"
+                "1fe71abb8d5f24c3"
             ]
         ]
     },
@@ -1160,8 +1159,8 @@
         "command": "/start",
         "commandType": "str",
         "commandCase": false,
-        "x": 630,
-        "y": 380,
+        "x": 590,
+        "y": 360,
         "wires": [
             [
                 "6318f51cb383430b"
@@ -1177,8 +1176,8 @@
         "chatId": "",
         "message": "",
         "parseMode": "",
-        "x": 900,
-        "y": 380,
+        "x": 880,
+        "y": 360,
         "wires": []
     },
     {
@@ -1191,11 +1190,12 @@
         "order": 4,
         "width": 6,
         "height": 6,
-        "format": "<img src=\"https://ichi.pro/assets/images/max/724/0*QPRSzJDjg5OtsqRj\">\n<p></p>\n<a class=\"my-title\">Node-RED on Cloud</a>",
+        "format": "<img src=\"https://ichi.pro/assets/images/max/724/0*QPRSzJDjg5OtsqRj\">\n<p></p>\n<a class=\"my-title\">Node-RED in Cloud</a>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
+        "className": "",
         "x": 110,
         "y": 500,
         "wires": [
@@ -1217,6 +1217,7 @@
         "fwdInMessages": true,
         "resendOnRefresh": false,
         "templateScope": "global",
+        "className": "",
         "x": 110,
         "y": 460,
         "wires": [
@@ -1233,11 +1234,12 @@
         "order": 2,
         "width": 6,
         "height": 1,
-        "format": "<style>\n.my-title { \n    color: #8E0000; \n    font-family: 'Helvetica Neue', sans-serif; \n    font-size: 30px; \n    font-weight: bold; \n    letter-spacing: -1px; \n    line-height: 1; \n    text-align: center; \n}\n\nfooter { \n    color: #111; \n    background-color:white;\n    font-family: 'Helvetica Neue', sans-serif; \n    font-size: 9px; \n    text-align: left; \n}\n\nlinks { \n    text-align: right;\n}\n\n</style>",
+        "format": "<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>\n<style>\n.my-title { \n    color: #8E0000; \n    font-family: \"Roboto Slab\";\n    font-size: 30px; \n    font-weight: bold; \n    letter-spacing: -1px; \n    line-height: 1; \n    text-align: center; \n}\n\nfooter { \n    color: #111; \n    background-color:white;\n    font-family: 'Helvetica Neue', sans-serif; \n    font-size: 9px; \n    text-align: left; \n}\n\nlinks { \n    text-align: right;\n}\n\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
+        "className": "",
         "x": 350,
         "y": 540,
         "wires": [
@@ -1349,7 +1351,7 @@
         "z": "3c1975f87cd0cabf",
         "g": "b0eb4adfc225fb72",
         "name": "App Scripts",
-        "info": " - Script set in [Google App Scripts](https://script.google.com/home/)\n - Login with hybuild.project@gmail.com\n - Time check in code to bypass 0.00-6.00\n\n<pre>\n// main.js\nfunction awake() {\n  if (new Date().getHours() > 6)\n    Logger.log(\"Response code: \" + ping().getResponseCode());\n  else\n    Logger.log(\"Ping skipped.\");\n}\n\nfunction ping() {\n  return UrlFetchApp.fetch(\"https://nodered-on-cloud.herokuapp.com/\");\n}\n\nfunction response() {\n  Logger.log(ping().getContentText());\n}\n</pre>",
+        "info": " - Script set in [Google App Scripts](https://script.google.com/home/)\n - Login with hybuild.project@gmail.com\n - Time check in code to bypass 0.00-6.00\n\n<pre>\nfunction awake() {\n  if (new Date().getUTCHours() > 6)\n    return UrlFetchApp.fetch(\"https://nodered-on-cloud.herokuapp.com/\");\n}\n</pre>",
         "x": 610,
         "y": 460,
         "wires": []
@@ -1363,34 +1365,6 @@
         "info": " - [Kaffeine](https://kaffeine.herokuapp.com/) keeps alive Heroku dynos\n - Every 30 minutes from 6.00 to 23.59\n - Heroku free dyno limit: 550 hours/mounth",
         "x": 610,
         "y": 500,
-        "wires": []
-    },
-    {
-        "id": "0d7282cf46b0f6bd",
-        "type": "http in",
-        "z": "3c1975f87cd0cabf",
-        "name": "",
-        "url": "/wakeup",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 610,
-        "y": 340,
-        "wires": [
-            [
-                "6318f51cb383430b"
-            ]
-        ]
-    },
-    {
-        "id": "3a70eaf0a97e5cd9",
-        "type": "http response",
-        "z": "3c1975f87cd0cabf",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 870,
-        "y": 340,
         "wires": []
     },
     {
@@ -4030,7 +4004,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 910,
-        "y": 80,
+        "y": 40,
         "wires": [
             []
         ]
@@ -4040,12 +4014,12 @@
         "type": "http in",
         "z": "d405d0aa94060361",
         "name": "",
-        "url": "/test",
+        "url": "/wakeup",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 300,
-        "y": 260,
+        "x": 130,
+        "y": 200,
         "wires": [
             [
                 "dbfc1491fb39250d"
@@ -4060,25 +4034,25 @@
         "statusCode": "",
         "headers": {},
         "x": 910,
-        "y": 320,
+        "y": 280,
         "wires": []
     },
     {
         "id": "718afe2628b4cea2",
         "type": "http request",
         "z": "d405d0aa94060361",
-        "name": "",
+        "name": "GET /wakeup",
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "{{{link}}}/test",
+        "url": "{{{link}}}/wakeup",
         "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 530,
-        "y": 80,
+        "x": 540,
+        "y": 40,
         "wires": [
             [
                 "a292e57ce1e47ac2",
@@ -4098,7 +4072,7 @@
         "template": "{\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpu\": \"node -e \\\"console.log(require('os').cpus()[0].model)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"ip\": \"node -e \\\"console.log(require('os').networkInterfaces().eth0[0].address)\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"username\": \"node -e \\\"console.log(require('os').userInfo().username)\\\"\",\n\"uid\": \"node -e \\\"console.log(require('os').userInfo().uid)\\\"\",\n\"gid\": \"node -e \\\"console.log(require('os').userInfo().gid)\\\"\",\n\"shell\": \"node -e \\\"console.log(require('os').userInfo().shell)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\"}",
         "output": "json",
         "x": 730,
-        "y": 240,
+        "y": 200,
         "wires": [
             [
                 "209b965e93c1735a"
@@ -4117,8 +4091,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 290,
-        "y": 320,
+        "x": 110,
+        "y": 280,
         "wires": [
             [
                 "19a1f3341b83ba3f"
@@ -4141,7 +4115,7 @@
         "stream": false,
         "addname": "topic",
         "x": 910,
-        "y": 240,
+        "y": 200,
         "wires": [
             [
                 "c7ef3e15a90627d0"
@@ -4164,12 +4138,13 @@
         "timeout": "",
         "count": "",
         "reduceRight": false,
-        "x": 710,
-        "y": 320,
+        "x": 510,
+        "y": 280,
         "wires": [
             [
                 "2388051412f54c1e",
-                "6d31805de58c3881"
+                "6d31805de58c3881",
+                "bd0f758305a91f3c"
             ]
         ]
     },
@@ -4184,8 +4159,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 320,
+        "x": 310,
+        "y": 280,
         "wires": [
             [
                 "254eecfc168c2b34"
@@ -4232,12 +4207,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
-        "y": 400,
+        "x": 310,
+        "y": 360,
         "wires": [
             [
-                "8c9e9307acdfc516",
-                "bd0f758305a91f3c"
+                "8c9e9307acdfc516"
             ]
         ]
     },
@@ -4261,7 +4235,7 @@
         "to": "",
         "reg": false,
         "x": 540,
-        "y": 160,
+        "y": 120,
         "wires": [
             [
                 "71b3c9c0fe78625f"
@@ -4273,13 +4247,13 @@
         "type": "file",
         "z": "d405d0aa94060361",
         "name": "",
-        "filename": "public/activations.log",
+        "filename": "public/activate.log",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 740,
-        "y": 160,
+        "x": 750,
+        "y": 120,
         "wires": [
             [
                 "4027d5a37ffa9ab2"
@@ -4300,7 +4274,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 910,
-        "y": 160,
+        "y": 120,
         "wires": []
     },
     {
@@ -4330,7 +4304,7 @@
         "to": "",
         "reg": false,
         "x": 310,
-        "y": 80,
+        "y": 40,
         "wires": [
             []
         ]
@@ -4369,7 +4343,7 @@
         "to": "",
         "reg": false,
         "x": 530,
-        "y": 240,
+        "y": 200,
         "wires": [
             [
                 "146a537460045468"
@@ -4396,7 +4370,7 @@
         "to": "",
         "reg": false,
         "x": 740,
-        "y": 80,
+        "y": 40,
         "wires": [
             [
                 "2b7326450d3f6b89"
@@ -4437,7 +4411,7 @@
         "to": "",
         "reg": false,
         "x": 310,
-        "y": 160,
+        "y": 120,
         "wires": [
             [
                 "718afe2628b4cea2"
@@ -4461,23 +4435,13 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 310,
-        "y": 400,
+        "x": 130,
+        "y": 360,
         "wires": [
             [
                 "93ca840b8a026abd"
             ]
         ]
-    },
-    {
-        "id": "2d834777f09c9895",
-        "type": "comment",
-        "z": "d405d0aa94060361",
-        "name": "Find documents",
-        "info": "\n",
-        "x": 100,
-        "y": 460,
-        "wires": []
     },
     {
         "id": "f49ecf07e56677f4",
@@ -4496,7 +4460,7 @@
         "topic": "",
         "payload": "{\"name\":\"Heroku\"}",
         "payloadType": "json",
-        "x": 130,
+        "x": 330,
         "y": 520,
         "wires": [
             [
@@ -4515,8 +4479,8 @@
         "upsert": true,
         "multi": false,
         "operation": "update",
-        "x": 810,
-        "y": 440,
+        "x": 610,
+        "y": 360,
         "wires": []
     },
     {
@@ -4527,8 +4491,8 @@
         "name": "",
         "collection": "cloud",
         "operation": "find",
-        "x": 410,
-        "y": 540,
+        "x": 610,
+        "y": 560,
         "wires": [
             [
                 "7c8712341755733a"
@@ -4552,7 +4516,7 @@
         "topic": "",
         "payload": "{}",
         "payloadType": "json",
-        "x": 150,
+        "x": 290,
         "y": 560,
         "wires": [
             [
@@ -4570,7 +4534,7 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 690,
+        "x": 890,
         "y": 560,
         "wires": []
     },
@@ -4580,8 +4544,8 @@
         "z": "d405d0aa94060361",
         "name": "MongoDB Atlas",
         "info": "https://cloud.mongodb.com/\n<br>\n(gamesup / mongosup)\n${ATLAS_USERNAME}\n${ATLAS_PASSWORD}",
-        "x": 920,
-        "y": 20,
+        "x": 880,
+        "y": 360,
         "wires": []
     },
     {
@@ -4604,8 +4568,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 520,
-        "y": 480,
+        "x": 300,
+        "y": 440,
         "wires": [
             [
                 "65b97c3e4dee730b"
@@ -4625,8 +4589,8 @@
         "format": "<a href=\"https://charts.mongodb.com/charts-project-0-ldowu/dashboards/72d2c3bd-f1ac-4a97-9d07-bed2b13f2426\">https://charts.mongodb.com/charts-project-0-ldowu</a>",
         "layout": "row-spread",
         "className": "",
-        "x": 310,
-        "y": 480,
+        "x": 130,
+        "y": 440,
         "wires": []
     },
     {
@@ -4637,8 +4601,8 @@
         "name": "",
         "collection": "cloud",
         "operation": "find",
-        "x": 790,
-        "y": 500,
+        "x": 610,
+        "y": 440,
         "wires": [
             [
                 "01a3b6f9b67bd419"
@@ -4658,35 +4622,24 @@
         "outputs": 0,
         "cts": false,
         "x": 910,
-        "y": 560,
+        "y": 440,
         "wires": []
     },
     {
         "id": "46397713e08f728a",
         "type": "inject",
         "z": "d405d0aa94060361",
-        "name": "every 5 min",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "payload"
-            }
-        ],
+        "name": "5m",
+        "props": [],
         "repeat": "",
         "crontab": "*/5 0-23 * * *",
         "once": true,
         "onceDelay": 0.1,
-        "topic": "Heroku",
-        "payload": "https://node-red-on-cloud.herokuapp.com",
-        "payloadType": "str",
+        "topic": "",
         "x": 110,
-        "y": 60,
+        "y": 120,
         "wires": [
             [
-                "f7219f063811fec2",
                 "45ec4bd081761a2e"
             ]
         ]
@@ -4695,12 +4648,12 @@
         "id": "188f35ed7717a84a",
         "type": "telegrambot-command",
         "z": "d405d0aa94060361",
-        "name": "/os-stats",
+        "name": "/status",
         "bot": "ee20ae5266a5e32c",
-        "command": "/os-stats",
+        "command": "/stats",
         "commandType": "str",
         "commandCase": false,
-        "x": 300,
+        "x": 290,
         "y": 200,
         "wires": [
             [
@@ -4718,8 +4671,37 @@
         "message": "",
         "parseMode": "",
         "x": 740,
-        "y": 380,
+        "y": 280,
         "wires": []
+    },
+    {
+        "id": "5a80fdbb0d6919d8",
+        "type": "inject",
+        "z": "d405d0aa94060361",
+        "name": "startup",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "Heroku",
+        "payload": "https://nric-temp.herokuapp.com",
+        "payloadType": "str",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "f7219f063811fec2"
+            ]
+        ]
     },
     {
         "id": "d3ccd3e3.2545a",

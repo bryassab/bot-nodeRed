@@ -230,10 +230,13 @@
             "5cd1f84172efed80",
             "8ff958a673b8f0be",
             "144cbd9489eb0a3a",
-            "625dabfe20b68fb0"
+            "625dabfe20b68fb0",
+            "f8e3c37f8e50f543"
         ],
         "x": 54,
-        "y": 339
+        "y": 339,
+        "w": 432,
+        "h": 242
     },
     {
         "id": "f936a74110b9b914",
@@ -1139,7 +1142,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Dashboard: https://node-red-on-cloud.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com\nHome: https://node-red-on-cloud.herokuapp.com\nNode-RED: https://node-red-on-cloud.herokuapp.com/editor",
+        "template": "Dashboard: https://nric-temp.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com/apps/nric-temp\nHome: https://nric-temp.herokuapp.com\nNode-RED: https://nric-temp.herokuapp.com/editor",
         "output": "str",
         "x": 720,
         "y": 360,
@@ -1364,6 +1367,16 @@
         "info": " - [Kaffeine](https://kaffeine.herokuapp.com/) keeps alive Heroku dynos\n - Every 30 minutes from 6.00 to 23.59\n - Heroku free dyno limit: 550 hours/mounth",
         "x": 610,
         "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c4e38e4e8c9a4362",
+        "type": "comment",
+        "z": "3c1975f87cd0cabf",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 760,
+        "y": 380,
         "wires": []
     },
     {
@@ -2479,14 +2492,14 @@
         "type": "function",
         "z": "cdd0d95b0f6f8604",
         "g": "8ae85c804dc630f2",
-        "name": "ELIMINA a regime",
+        "name": "!! ELIMINAMI !!",
         "func": "msg.payload.api = msg.payload.api.replace(\"node-red-in-cloud\", \"nric-temp\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 360,
         "y": 520,
         "wires": [
             [
@@ -2495,13 +2508,84 @@
         ]
     },
     {
-        "id": "a7e59c1aaf36085b",
+        "id": "732472557203eec8",
         "type": "comment",
         "z": "cdd0d95b0f6f8604",
-        "name": "CAMBIARE nric-temp A REGIME",
-        "info": "nric-temp",
-        "x": 650,
-        "y": 240,
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 420,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "46074252c6b29208",
+        "type": "comment",
+        "z": "cdd0d95b0f6f8604",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 420,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "eb37736d64eb0568",
+        "type": "comment",
+        "z": "cdd0d95b0f6f8604",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 660,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ed25214ee27b15c1",
+        "type": "comment",
+        "z": "cdd0d95b0f6f8604",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 660,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b5172ee81ba1fbe6",
+        "type": "comment",
+        "z": "cdd0d95b0f6f8604",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 660,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "65270cfc67098556",
+        "type": "comment",
+        "z": "cdd0d95b0f6f8604",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 660,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "40d3666837d54490",
+        "type": "comment",
+        "z": "cdd0d95b0f6f8604",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 660,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "f8e3c37f8e50f543",
+        "type": "comment",
+        "z": "cdd0d95b0f6f8604",
+        "g": "8ae85c804dc630f2",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 380,
+        "y": 540,
         "wires": []
     },
     {
@@ -4007,7 +4091,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "label": "{{name}}",
+        "label": "{{name}} wakeups",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -4036,8 +4120,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 910,
-        "y": 40,
+        "x": 930,
+        "y": 160,
         "wires": [
             []
         ]
@@ -4051,11 +4135,11 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 130,
-        "y": 160,
+        "x": 110,
+        "y": 140,
         "wires": [
             [
-                "f5b3c6cd5f24e002"
+                "3da14ef49367e16d"
             ]
         ]
     },
@@ -4066,46 +4150,23 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 910,
-        "y": 280,
+        "x": 930,
+        "y": 260,
         "wires": []
-    },
-    {
-        "id": "718afe2628b4cea2",
-        "type": "http request",
-        "z": "d405d0aa94060361",
-        "name": "GET /wakeup",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "{{{link}}}/wakeup",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 540,
-        "y": 40,
-        "wires": [
-            [
-                "a292e57ce1e47ac2",
-                "9d66acc0d637e3e0"
-            ]
-        ]
     },
     {
         "id": "146a537460045468",
         "type": "template",
         "z": "d405d0aa94060361",
-        "name": "command list",
+        "name": "commands",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpu\": \"node -e \\\"console.log(require('os').cpus()[0].model)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"ip\": \"node -e \\\"console.log(require('os').networkInterfaces().eth0[0].address)\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"username\": \"node -e \\\"console.log(require('os').userInfo().username)\\\"\",\n\"uid\": \"node -e \\\"console.log(require('os').userInfo().uid)\\\"\",\n\"gid\": \"node -e \\\"console.log(require('os').userInfo().gid)\\\"\",\n\"shell\": \"node -e \\\"console.log(require('os').userInfo().shell)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\"}",
+        "template": "{\n\"remote_host\": \"echo {{msg.remoteAddress}}\",\n\"remote_port\": \"echo {{msg.remotePort}}\",\n\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpu\": \"node -e \\\"console.log(require('os').cpus()[0].model)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"ip\": \"node -e \\\"console.log(require('os').networkInterfaces().eth0[0].address)\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"username\": \"node -e \\\"console.log(require('os').userInfo().username)\\\"\",\n\"uid\": \"node -e \\\"console.log(require('os').userInfo().uid)\\\"\",\n\"gid\": \"node -e \\\"console.log(require('os').userInfo().gid)\\\"\",\n\"shell\": \"node -e \\\"console.log(require('os').userInfo().shell)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\",\n}",
         "output": "json",
-        "x": 730,
-        "y": 200,
+        "x": 710,
+        "y": 220,
         "wires": [
             [
                 "209b965e93c1735a"
@@ -4124,7 +4185,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 110,
+        "x": 230,
         "y": 280,
         "wires": [
             [
@@ -4147,8 +4208,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "topic",
-        "x": 910,
-        "y": 200,
+        "x": 90,
+        "y": 280,
         "wires": [
             [
                 "c7ef3e15a90627d0"
@@ -4176,7 +4237,7 @@
         "wires": [
             [
                 "6d31805de58c3881",
-                "b6fad4b2b6585d57"
+                "4416fc15ea47c9b9"
             ]
         ]
     },
@@ -4184,14 +4245,14 @@
         "id": "19a1f3341b83ba3f",
         "type": "function",
         "z": "d405d0aa94060361",
-        "name": "clear spaces",
+        "name": "clear",
         "func": "msg.payload = msg.payload.replace(/\\n/g, \"\").replace(/ +/g, \" \")\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 370,
         "y": 280,
         "wires": [
             [
@@ -4239,7 +4300,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
+        "x": 350,
         "y": 360,
         "wires": [
             [
@@ -4257,7 +4318,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$fromMillis(time, \"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]\\t\", \"+0100\") & statusCode & \"\\tinternal\"",
+                "to": "$fromMillis(time, \"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]\\t\", \"+0100\") & statusCode & \"\\t\" & remoteAddress & \"\\t\" & remotePort",
                 "tot": "jsonata"
             }
         ],
@@ -4266,7 +4327,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
+        "x": 720,
         "y": 100,
         "wires": [
             [
@@ -4279,13 +4340,13 @@
         "type": "file",
         "z": "d405d0aa94060361",
         "name": "",
-        "filename": "public/activate.log",
+        "filename": "public/awakenings.log",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 750,
-        "y": 100,
+        "x": 740,
+        "y": 40,
         "wires": [
             [
                 "4027d5a37ffa9ab2"
@@ -4301,65 +4362,47 @@
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "Latest",
-        "format": "{{msg.payload}}",
+        "label": "Last call",
+        "format": "{{value | limitTo: 19}}",
         "layout": "row-spread",
         "className": "",
-        "x": 910,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "f7219f063811fec2",
-        "type": "change",
-        "z": "d405d0aa94060361",
-        "name": "set flow vars",
-        "rules": [
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "flow",
-                "to": "topic",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "link",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
+        "x": 920,
         "y": 40,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "dbfc1491fb39250d",
         "type": "change",
         "z": "d405d0aa94060361",
-        "name": "get flow vars",
+        "name": "set msg info",
         "rules": [
+            {
+                "t": "set",
+                "p": "remoteAddress",
+                "pt": "msg",
+                "to": "req.socket.remoteAddress",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "remotePort",
+                "pt": "msg",
+                "to": "req.socket.remotePort",
+                "tot": "msg"
+            },
             {
                 "t": "set",
                 "p": "link",
                 "pt": "msg",
-                "to": "link",
-                "tot": "flow"
+                "to": "https://nric-temp.herokuapp.com",
+                "tot": "str"
             },
             {
                 "t": "set",
                 "p": "name",
                 "pt": "msg",
-                "to": "name",
-                "tot": "flow"
+                "to": "Heroku",
+                "tot": "str"
             },
             {
                 "t": "set",
@@ -4375,10 +4418,12 @@
         "to": "",
         "reg": false,
         "x": 530,
-        "y": 200,
+        "y": 160,
         "wires": [
             [
-                "146a537460045468"
+                "146a537460045468",
+                "a292e57ce1e47ac2",
+                "9d66acc0d637e3e0"
             ]
         ]
     },
@@ -4392,7 +4437,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "statusCode",
+                "to": "remotePort",
                 "tot": "msg"
             }
         ],
@@ -4401,52 +4446,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
-        "y": 40,
+        "x": 720,
+        "y": 160,
         "wires": [
             [
                 "2b7326450d3f6b89"
-            ]
-        ]
-    },
-    {
-        "id": "45ec4bd081761a2e",
-        "type": "change",
-        "z": "d405d0aa94060361",
-        "name": "get flow vars",
-        "rules": [
-            {
-                "t": "set",
-                "p": "link",
-                "pt": "msg",
-                "to": "link",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "name",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "time",
-                "pt": "msg",
-                "to": "",
-                "tot": "date"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 100,
-        "wires": [
-            [
-                "718afe2628b4cea2"
             ]
         ]
     },
@@ -4467,7 +4471,7 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 130,
+        "x": 110,
         "y": 360,
         "wires": [
             [
@@ -4512,7 +4516,7 @@
         "multi": false,
         "operation": "update",
         "x": 610,
-        "y": 400,
+        "y": 360,
         "wires": []
     },
     {
@@ -4524,7 +4528,7 @@
         "collection": "cloud",
         "operation": "find",
         "x": 610,
-        "y": 480,
+        "y": 500,
         "wires": [
             [
                 "7c8712341755733a"
@@ -4548,8 +4552,8 @@
         "topic": "",
         "payload": "{}",
         "payloadType": "json",
-        "x": 330,
-        "y": 440,
+        "x": 370,
+        "y": 560,
         "wires": [
             [
                 "394b169e46aafea0"
@@ -4566,8 +4570,8 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 890,
-        "y": 480,
+        "x": 910,
+        "y": 500,
         "wires": []
     },
     {
@@ -4600,8 +4604,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 300,
-        "y": 560,
+        "x": 360,
+        "y": 440,
         "wires": [
             [
                 "65b97c3e4dee730b"
@@ -4621,7 +4625,7 @@
         "format": "<a href=\"https://charts.mongodb.com/charts-project-0-ldowu/dashboards/72d2c3bd-f1ac-4a97-9d07-bed2b13f2426\">https://charts.mongodb.com/charts-project-0-ldowu</a>",
         "layout": "row-spread",
         "className": "",
-        "x": 130,
+        "x": 570,
         "y": 560,
         "wires": []
     },
@@ -4634,7 +4638,7 @@
         "collection": "cloud",
         "operation": "find",
         "x": 610,
-        "y": 560,
+        "y": 440,
         "wires": [
             [
                 "01a3b6f9b67bd419"
@@ -4653,29 +4657,9 @@
         "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 910,
-        "y": 560,
+        "x": 930,
+        "y": 440,
         "wires": []
-    },
-    {
-        "id": "46397713e08f728a",
-        "type": "inject",
-        "z": "d405d0aa94060361",
-        "d": true,
-        "name": "5m",
-        "props": [],
-        "repeat": "",
-        "crontab": "*/5 0-23 * * *",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 100,
-        "wires": [
-            [
-                "45ec4bd081761a2e"
-            ]
-        ]
     },
     {
         "id": "188f35ed7717a84a",
@@ -4686,11 +4670,11 @@
         "command": "/status",
         "commandType": "str",
         "commandCase": false,
-        "x": 110,
-        "y": 200,
+        "x": 90,
+        "y": 180,
         "wires": [
             [
-                "6fa021d6d1d11889"
+                "03034935a8b4483f"
             ]
         ]
     },
@@ -4703,48 +4687,33 @@
         "chatId": "",
         "message": "",
         "parseMode": "",
-        "x": 880,
-        "y": 340,
+        "x": 900,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "5a80fdbb0d6919d8",
-        "type": "inject",
+        "id": "42bc8cc0ecf617f4",
+        "type": "yaml",
         "z": "d405d0aa94060361",
-        "name": "startup",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "Heroku",
-        "payload": "https://nric-temp.herokuapp.com",
-        "payloadType": "str",
-        "x": 120,
-        "y": 40,
+        "property": "payload",
+        "name": "",
+        "x": 930,
+        "y": 300,
         "wires": [
             [
-                "f7219f063811fec2"
+                "bd0f758305a91f3c"
             ]
         ]
     },
     {
-        "id": "f5b3c6cd5f24e002",
+        "id": "3da14ef49367e16d",
         "type": "change",
         "z": "d405d0aa94060361",
-        "name": "",
+        "name": "from http (set flow.topic)",
         "rules": [
             {
                 "t": "set",
-                "p": "origin",
+                "p": "topic",
                 "pt": "flow",
                 "to": "http",
                 "tot": "str"
@@ -4755,8 +4724,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 160,
+        "x": 310,
+        "y": 140,
         "wires": [
             [
                 "dbfc1491fb39250d"
@@ -4764,14 +4733,14 @@
         ]
     },
     {
-        "id": "6fa021d6d1d11889",
+        "id": "03034935a8b4483f",
         "type": "change",
         "z": "d405d0aa94060361",
-        "name": "",
+        "name": "from telegram (set flow.topic)",
         "rules": [
             {
                 "t": "set",
-                "p": "origin",
+                "p": "topic",
                 "pt": "flow",
                 "to": "telegram",
                 "tot": "str"
@@ -4782,8 +4751,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 200,
+        "x": 300,
+        "y": 180,
         "wires": [
             [
                 "dbfc1491fb39250d"
@@ -4791,25 +4760,11 @@
         ]
     },
     {
-        "id": "42bc8cc0ecf617f4",
-        "type": "yaml",
-        "z": "d405d0aa94060361",
-        "property": "payload",
-        "name": "",
-        "x": 710,
-        "y": 340,
-        "wires": [
-            [
-                "bd0f758305a91f3c"
-            ]
-        ]
-    },
-    {
-        "id": "b6fad4b2b6585d57",
+        "id": "4416fc15ea47c9b9",
         "type": "switch",
         "z": "d405d0aa94060361",
-        "name": "",
-        "property": "origin",
+        "name": "from what?",
+        "property": "topic",
         "propertyType": "flow",
         "rules": [
             {
@@ -4836,6 +4791,16 @@
                 "42bc8cc0ecf617f4"
             ]
         ]
+    },
+    {
+        "id": "d2151eb75ef59d16",
+        "type": "comment",
+        "z": "d405d0aa94060361",
+        "name": "!! ATTENZIONE !!",
+        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "x": 560,
+        "y": 180,
+        "wires": []
     },
     {
         "id": "d3ccd3e3.2545a",

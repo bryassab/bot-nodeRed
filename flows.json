@@ -625,8 +625,8 @@
     {
         "id": "c7082c22c6d48864",
         "type": "ui_link",
-        "name": "Activations",
-        "link": "../activate.log",
+        "name": "Awakenings",
+        "link": "../awakenings.log",
         "icon": "description",
         "target": "iframe",
         "order": 9
@@ -634,18 +634,19 @@
     {
         "id": "c4a67c7d0e58d51b",
         "type": "ui_group",
-        "name": "Default",
+        "name": "Ports",
         "tab": "f52b79922dbb10f0",
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "f52b79922dbb10f0",
         "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
+        "name": "Remote",
+        "icon": "call",
         "disabled": false,
         "hidden": false
     },
@@ -4163,7 +4164,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{\n\"remote_host\": \"echo {{msg.remoteAddress}}\",\n\"remote_port\": \"echo {{msg.remotePort}}\",\n\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpu\": \"node -e \\\"console.log(require('os').cpus()[0].model)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"ip\": \"node -e \\\"console.log(require('os').networkInterfaces().eth0[0].address)\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"username\": \"node -e \\\"console.log(require('os').userInfo().username)\\\"\",\n\"uid\": \"node -e \\\"console.log(require('os').userInfo().uid)\\\"\",\n\"gid\": \"node -e \\\"console.log(require('os').userInfo().gid)\\\"\",\n\"shell\": \"node -e \\\"console.log(require('os').userInfo().shell)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\",\n}",
+        "template": "{\n\"name\": \"echo {{name}}\",\n\"link\": \"echo {{{link}}}\",\n\"timestamp\": \"echo {{time}}\",\n\"remote_host\": \"echo {{remoteAddress}}\",\n\"remote_port\": \"echo {{remotePort}}\",\n\"remote_host\": \"echo {{localAddress}}\",\n\"remote_port\": \"echo {{localPort}}\",\n\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpu\": \"node -e \\\"console.log(require('os').cpus()[0].model)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"ip\": \"node -e \\\"console.log(require('os').networkInterfaces().eth0[0].address)\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"username\": \"node -e \\\"console.log(require('os').userInfo().username)\\\"\",\n\"uid\": \"node -e \\\"console.log(require('os').userInfo().uid)\\\"\",\n\"gid\": \"node -e \\\"console.log(require('os').userInfo().gid)\\\"\",\n\"shell\": \"node -e \\\"console.log(require('os').userInfo().shell)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\"\n}",
         "output": "json",
         "x": 710,
         "y": 220,
@@ -4237,7 +4238,8 @@
         "wires": [
             [
                 "6d31805de58c3881",
-                "4416fc15ea47c9b9"
+                "4416fc15ea47c9b9",
+                "93ca840b8a026abd"
             ]
         ]
     },
@@ -4410,6 +4412,20 @@
                 "pt": "msg",
                 "to": "",
                 "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "localAddress",
+                "pt": "msg",
+                "to": "req.socket.localAddress",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "localPort",
+                "pt": "msg",
+                "to": "req.socket.localPort",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -4474,9 +4490,7 @@
         "x": 110,
         "y": 360,
         "wires": [
-            [
-                "93ca840b8a026abd"
-            ]
+            []
         ]
     },
     {
@@ -4528,7 +4542,7 @@
         "collection": "cloud",
         "operation": "find",
         "x": 610,
-        "y": 500,
+        "y": 520,
         "wires": [
             [
                 "7c8712341755733a"
@@ -4539,7 +4553,7 @@
         "id": "f0b5820129e19bb3",
         "type": "inject",
         "z": "d405d0aa94060361",
-        "name": "dump",
+        "name": "dump all documents",
         "props": [
             {
                 "p": "payload"
@@ -4552,8 +4566,8 @@
         "topic": "",
         "payload": "{}",
         "payloadType": "json",
-        "x": 370,
-        "y": 560,
+        "x": 330,
+        "y": 540,
         "wires": [
             [
                 "394b169e46aafea0"
@@ -4571,7 +4585,7 @@
         "tostatus": false,
         "complete": "false",
         "x": 910,
-        "y": 500,
+        "y": 520,
         "wires": []
     },
     {
@@ -4580,8 +4594,8 @@
         "z": "d405d0aa94060361",
         "name": "MongoDB Atlas",
         "info": "https://cloud.mongodb.com/\n<br>\n(gamesup / mongosup)\n${ATLAS_USERNAME}\n${ATLAS_PASSWORD}",
-        "x": 140,
-        "y": 440,
+        "x": 120,
+        "y": 520,
         "wires": []
     },
     {
@@ -4625,8 +4639,8 @@
         "format": "<a href=\"https://charts.mongodb.com/charts-project-0-ldowu/dashboards/72d2c3bd-f1ac-4a97-9d07-bed2b13f2426\">https://charts.mongodb.com/charts-project-0-ldowu</a>",
         "layout": "row-spread",
         "className": "",
-        "x": 570,
-        "y": 560,
+        "x": 110,
+        "y": 440,
         "wires": []
     },
     {

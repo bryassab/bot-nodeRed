@@ -4121,7 +4121,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 930,
+        "x": 710,
         "y": 160,
         "wires": [
             []
@@ -4140,7 +4140,8 @@
         "y": 140,
         "wires": [
             [
-                "3da14ef49367e16d"
+                "3da14ef49367e16d",
+                "dbfc1491fb39250d"
             ]
         ]
     },
@@ -4151,28 +4152,9 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 930,
+        "x": 710,
         "y": 260,
         "wires": []
-    },
-    {
-        "id": "146a537460045468",
-        "type": "template",
-        "z": "d405d0aa94060361",
-        "name": "commands",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\n\"name\": \"echo {{name}}\",\n\"link\": \"echo {{{link}}}\",\n\"timestamp\": \"echo {{time}}\",\n\"remote_address\": \"echo {{{remoteAddress}}}\",\n\"remote_port\": \"echo {{remotePort}}\",\n\"local_address\": \"echo {{{localAddress}}}\",\n\"local_port\": \"echo {{localPort}}\",\n\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpu\": \"node -e \\\"console.log(require('os').cpus()[0].model)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"ip\": \"node -e \\\"console.log(require('os').networkInterfaces().eth0[0].address)\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"username\": \"node -e \\\"console.log(require('os').userInfo().username)\\\"\",\n\"uid\": \"node -e \\\"console.log(require('os').userInfo().uid)\\\"\",\n\"gid\": \"node -e \\\"console.log(require('os').userInfo().gid)\\\"\",\n\"shell\": \"node -e \\\"console.log(require('os').userInfo().shell)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\"\n}",
-        "output": "json",
-        "x": 710,
-        "y": 220,
-        "wires": [
-            [
-                "209b965e93c1735a"
-            ]
-        ]
     },
     {
         "id": "c7ef3e15a90627d0",
@@ -4239,7 +4221,8 @@
             [
                 "6d31805de58c3881",
                 "4416fc15ea47c9b9",
-                "93ca840b8a026abd"
+                "2388051412f54c1e",
+                "42bc8cc0ecf617f4"
             ]
         ]
     },
@@ -4329,7 +4312,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
+        "x": 540,
         "y": 100,
         "wires": [
             [
@@ -4348,7 +4331,7 @@
         "overwriteFile": "false",
         "encoding": "none",
         "x": 740,
-        "y": 40,
+        "y": 100,
         "wires": [
             [
                 "4027d5a37ffa9ab2"
@@ -4369,7 +4352,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 920,
-        "y": 40,
+        "y": 100,
         "wires": []
     },
     {
@@ -4433,13 +4416,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
+        "x": 350,
         "y": 160,
         "wires": [
             [
-                "146a537460045468",
                 "a292e57ce1e47ac2",
-                "9d66acc0d637e3e0"
+                "9d66acc0d637e3e0",
+                "146a537460045468"
             ]
         ]
     },
@@ -4462,7 +4445,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
+        "x": 540,
         "y": 160,
         "wires": [
             [
@@ -4490,7 +4473,9 @@
         "x": 110,
         "y": 360,
         "wires": [
-            []
+            [
+                "93ca840b8a026abd"
+            ]
         ]
     },
     {
@@ -4553,7 +4538,7 @@
         "id": "f0b5820129e19bb3",
         "type": "inject",
         "z": "d405d0aa94060361",
-        "name": "dump all documents",
+        "name": "dump all docs",
         "props": [
             {
                 "p": "payload"
@@ -4566,7 +4551,7 @@
         "topic": "",
         "payload": "{}",
         "payloadType": "json",
-        "x": 330,
+        "x": 310,
         "y": 540,
         "wires": [
             [
@@ -4688,7 +4673,8 @@
         "y": 180,
         "wires": [
             [
-                "03034935a8b4483f"
+                "03034935a8b4483f",
+                "dbfc1491fb39250d"
             ]
         ]
     },
@@ -4702,7 +4688,7 @@
         "message": "",
         "parseMode": "",
         "x": 900,
-        "y": 360,
+        "y": 300,
         "wires": []
     },
     {
@@ -4711,7 +4697,7 @@
         "z": "d405d0aa94060361",
         "property": "payload",
         "name": "",
-        "x": 930,
+        "x": 710,
         "y": 300,
         "wires": [
             [
@@ -4723,12 +4709,13 @@
         "id": "3da14ef49367e16d",
         "type": "change",
         "z": "d405d0aa94060361",
-        "name": "from http (set flow.topic)",
+        "d": true,
+        "name": "from http (set msg.origin)",
         "rules": [
             {
                 "t": "set",
-                "p": "topic",
-                "pt": "flow",
+                "p": "origin",
+                "pt": "msg",
                 "to": "http",
                 "tot": "str"
             }
@@ -4738,8 +4725,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
-        "y": 140,
+        "x": 150,
+        "y": 20,
         "wires": [
             [
                 "dbfc1491fb39250d"
@@ -4750,12 +4737,13 @@
         "id": "03034935a8b4483f",
         "type": "change",
         "z": "d405d0aa94060361",
-        "name": "from telegram (set flow.topic)",
+        "d": true,
+        "name": "from telegram (set msg.origin)",
         "rules": [
             {
                 "t": "set",
-                "p": "topic",
-                "pt": "flow",
+                "p": "origin",
+                "pt": "msg",
                 "to": "telegram",
                 "tot": "str"
             }
@@ -4765,8 +4753,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 180,
+        "x": 170,
+        "y": 20,
         "wires": [
             [
                 "dbfc1491fb39250d"
@@ -4777,9 +4765,10 @@
         "id": "4416fc15ea47c9b9",
         "type": "switch",
         "z": "d405d0aa94060361",
+        "d": true,
         "name": "from what?",
-        "property": "topic",
-        "propertyType": "flow",
+        "property": "origin",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
@@ -4795,8 +4784,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 710,
-        "y": 280,
+        "x": 910,
+        "y": 20,
         "wires": [
             [
                 "2388051412f54c1e"
@@ -4812,9 +4801,28 @@
         "z": "d405d0aa94060361",
         "name": "!! ATTENZIONE !!",
         "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
-        "x": 560,
+        "x": 380,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "146a537460045468",
+        "type": "template",
+        "z": "d405d0aa94060361",
+        "name": "commands",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n\"name\": \"echo {{name}}\",\n\"link\": \"echo {{{link}}}\",\n\"timestamp\": \"echo {{time}}\",\n\"remote_address\": \"echo {{{remoteAddress}}}\",\n\"remote_port\": \"echo {{remotePort}}\",\n\"local_address\": \"echo {{{localAddress}}}\",\n\"local_port\": \"echo {{localPort}}\",\n\"node_ver\": \"node -v\",\n\"npm_ver\": \"npm -v\",\n\"arch\": \"node -e \\\"console.log(require('os').arch())\\\"\",\n\"n_cpus\": \"node -e \\\"console.log(require('os').cpus().length)\\\"\",\n\"cpu\": \"node -e \\\"console.log(require('os').cpus()[0].model)\\\"\",\n\"cpus\": \"node -e \\\"console.log(require('os').cpus())\\\"\",\n\"endianness\": \"node -e \\\"console.log(require('os').endianness())\\\"\",\n\"freemem\": \"node -e \\\"console.log(require('os').freemem()/1024/1024/1024)\\\"\",\n\"homedir\": \"node -e \\\"console.log(require('os').homedir())\\\"\",\n\"hostname\": \"node -e \\\"console.log(require('os').hostname())\\\"\",\n\"ip\": \"node -e \\\"console.log(require('os').networkInterfaces().eth0[0].address)\\\"\",\n\"network\": \"node -e \\\"console.log(require('os').networkInterfaces())\\\"\",\n\"platform\": \"node -e \\\"console.log(require('os').platform())\\\"\",\n\"release\": \"node -e \\\"console.log(require('os').release())\\\"\",\n\"totalmem\": \"node -e \\\"console.log(require('os').totalmem()/1024/1024/1024)\\\"\",\n\"uptime\": \"node -e \\\"console.log(require('os').uptime()/60/60)\\\"\",\n\"username\": \"node -e \\\"console.log(require('os').userInfo().username)\\\"\",\n\"uid\": \"node -e \\\"console.log(require('os').userInfo().uid)\\\"\",\n\"gid\": \"node -e \\\"console.log(require('os').userInfo().gid)\\\"\",\n\"shell\": \"node -e \\\"console.log(require('os').userInfo().shell)\\\"\",\n\"userInfo\": \"node -e \\\"console.log(require('os').userInfo())\\\"\",\n\"type\": \"node -e \\\"console.log(require('os').type())\\\"\",\n\"os_ver\": \"node -e \\\"console.log(require('os').version())\\\"\"\n}",
+        "output": "json",
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "209b965e93c1735a"
+            ]
+        ]
     },
     {
         "id": "d3ccd3e3.2545a",

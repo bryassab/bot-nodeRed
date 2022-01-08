@@ -49,7 +49,7 @@
         "id": "2924702c.b33a7",
         "type": "subflow",
         "name": "ui-table handler",
-        "info": "# ui-table handler\nUniversal handler for ui-table.\n## features\n- buffer table data\n- add or update individual rows or cells of the table\n- delete rows\n- clear tableData\n- handle column width\n- handle column order\n- hide und unhide columns\n- hide and unhide rows\n- records row order\n- support for nested columns [(column groups)](http://tabulator.info/examples/4.7#column-groups)\n- support for child rows (_children) [(nested data trees)](http://tabulator.info/examples/4.7#tree)\n\nFor real life example see:\n\n**syslog server** for logfile like table with filters\n\n**remote device table** for dynamically updated table with context menues\n\n**irrigation system** for sortable rows\n\n## sending data to ui-tabel\n\n- sending an `array` as discribed in ui-table will replace the complete table and delete all table edits\n  \n  if `msg.keepEdits=true` is added the existing edits will be kept.\n- send an `object` containing the updated properties of a table row by sending msg.<tableDataProp>.\n\n  The table is updated using the `updateOrAddData` command. You can alter the command used by adding the `msg.tabulatorCommand` and `msg.tabulatorParameter`\n\n```\nmsg.tabulatorCommand=\"addData\";\nmsg.tabulatorParameter=[true];\n```\n## configuration\n- `tabulator` json formatted object containing configuration of the table. See ui-table for more details.\n- `property` property of the msg object that contains the data to be passed to ui-table. I.e. *state* `msg.state`\n- `index` index column to identify individual rows. Each message containing data must have a unique `msg.topic` to identify the row. Messages without this `msg.topic` will be droped. It is not nessesary but possible to display the index column in the table. Do not enable editing on this column otherwise you will loose the connection and another row will be added to the table as soon as a new message arrives!\n\n   Defaults to *$topic* `msg.state.$topic`\n- `maxRows`maximum number of rows held by table widget. If grater than **0** the amount of rows in ui-table is limited. For this to work the index row must be a Number. ýrows < currentID-maxRowsý will be deleted.\n- `maxStore`maximum number of rows stored by this node for replay if a client connects. If grater than **0** the amount of rows in flow context is limited. for this to work the index row must be a Number. ýrows < currentID-maxStoreý will be deleted.\n- `dashboard` name of the dashboard tab to only update the table if the dashboard is visible. If empty the table will be updated on every tab change and connect.\n- `context` configuration of context data. The subflow will save or cache data in the flows context using `$parent.`. \n   **tableData** caches the incoming data to restore it on `ui-controlý *change* messages.\n   **tableConfig** saves column width and order to save the interactive table layot\n   **tableEdit** saves edits on the table data otherwise it would be overwritten when new data arrives\n```json\n{\n    \"tableData\": {\n        \"name\": \"tableData\"\n    },\n    \"tableConfig\": {\n        \"name\": \"tableConfig\",\n        \"storage\": \"file\"\n    },\n    \"tableEdit\": {\n        \"name\": \"tableEdit\",\n        \"storage\": \"file\"\n    }\n}\n```\n\n## commands\ncommands can be passed by sending a object as `msg.payload`\n\n```json\n{\n    \"command\": \"delete\",\n    \"object\": \"columnOrder\"\n}\n```\n\n- `deleteTable` tableCache\n- `deleteRow` delete single row. `object` matching index property\n- `ignoreRow` delete single row and put it on an ignore list. `object` matching index property\n- `unIgnoreRow`remove row from the ignore list.  `object` matching index property\n- `unIgnoreRows`delte the ignore list. \n- `deleteRowOrder` delete custom row order\n- `deleteColumnOrder` delete custom column order\n  This is important if you add or delete columns in the tabulator config otherwise the columns most likely don`t show up\n- `deleteColumnWidth` delete custom column width\n- `columnHide` hide a column. `object` matching column field\n- `columnUnHide` unhide a column. `object` matching column field\n- `columnsUnHide` unhide all hidden columns.\n- `setMaxStore` set maximum amount of rows in cache\n- `setMaxDisplay` set maximum amout of rows in ui-table\n- `getTable` get table data (as displayed) as an array (on 2nd output)\n \n## background\nui-table warps the powerfull tabluator library.  This subflow makes it easier to unleash the powerfull features of ui-table",
+        "info": "# ui-table handler\nUniversal handler for ui-table.\n## features\n- buffer table data\n- add or update individual rows or cells of the table\n- delete rows\n- clear tableData\n- handle column width\n- handle column order\n- hide und unhide columns\n- hide and unhide rows\n- records row order\n- support for nested columns [(column groups)](http://tabulator.info/examples/4.7#column-groups)\n- support for child rows (_children) [(nested data trees)](http://tabulator.info/examples/4.7#tree)\n\nFor real life example see:\n\n**syslog server** for logfile like table with filters\n\n**remote device table** for dynamically updated table with context menues\n\n**irrigation system** for sortable rows\n\n## sending data to ui-tabel\n\n- sending an `array` as discribed in ui-table will replace the complete table and delete all table edits\n  \n  if `msg.keepEdits=true` is added the existing edits will be kept.\n- send an `object` containing the updated properties of a table row by sending msg.<tableDataProp>.\n\n  The table is updated using the `updateOrAddData` command. You can alter the command used by adding the `msg.tabulatorCommand` and `msg.tabulatorParameter`\n\n```\nmsg.tabulatorCommand=\"addData\";\nmsg.tabulatorParameter=[true];\n```\n## configuration\n- `tabulator` json formatted object containing configuration of the table. See ui-table for more details.\n- `property` property of the msg object that contains the data to be passed to ui-table. I.e. *state* `msg.state`\n- `index` index column to identify individual rows. Each message containing data must have a unique `msg.topic` to identify the row. Messages without this `msg.topic` will be droped. It is not nessesary but possible to display the index column in the table. Do not enable editing on this column otherwise you will loose the connection and another row will be added to the table as soon as a new message arrives!\n\n   Defaults to *$topic* `msg.state.$topic`\n- `maxRows`maximum number of rows held by table widget. If grater than **0** the amount of rows in ui-table is limited. For this to work the index row must be a Number. ï¿½rows < currentID-maxRowsï¿½ will be deleted.\n- `maxStore`maximum number of rows stored by this node for replay if a client connects. If grater than **0** the amount of rows in flow context is limited. for this to work the index row must be a Number. ï¿½rows < currentID-maxStoreï¿½ will be deleted.\n- `dashboard` name of the dashboard tab to only update the table if the dashboard is visible. If empty the table will be updated on every tab change and connect.\n- `context` configuration of context data. The subflow will save or cache data in the flows context using `$parent.`. \n   **tableData** caches the incoming data to restore it on `ui-controlï¿½ *change* messages.\n   **tableConfig** saves column width and order to save the interactive table layot\n   **tableEdit** saves edits on the table data otherwise it would be overwritten when new data arrives\n```json\n{\n    \"tableData\": {\n        \"name\": \"tableData\"\n    },\n    \"tableConfig\": {\n        \"name\": \"tableConfig\",\n        \"storage\": \"file\"\n    },\n    \"tableEdit\": {\n        \"name\": \"tableEdit\",\n        \"storage\": \"file\"\n    }\n}\n```\n\n## commands\ncommands can be passed by sending a object as `msg.payload`\n\n```json\n{\n    \"command\": \"delete\",\n    \"object\": \"columnOrder\"\n}\n```\n\n- `deleteTable` tableCache\n- `deleteRow` delete single row. `object` matching index property\n- `ignoreRow` delete single row and put it on an ignore list. `object` matching index property\n- `unIgnoreRow`remove row from the ignore list.  `object` matching index property\n- `unIgnoreRows`delte the ignore list. \n- `deleteRowOrder` delete custom row order\n- `deleteColumnOrder` delete custom column order\n  This is important if you add or delete columns in the tabulator config otherwise the columns most likely don`t show up\n- `deleteColumnWidth` delete custom column width\n- `columnHide` hide a column. `object` matching column field\n- `columnUnHide` unhide a column. `object` matching column field\n- `columnsUnHide` unhide all hidden columns.\n- `setMaxStore` set maximum amount of rows in cache\n- `setMaxDisplay` set maximum amout of rows in ui-table\n- `getTable` get table data (as displayed) as an array (on 2nd output)\n \n## background\nui-table warps the powerfull tabluator library.  This subflow makes it easier to unleash the powerfull features of ui-table",
         "category": "dashboard",
         "in": [
             {
@@ -88,7 +88,7 @@
             {
                 "name": "tabulator",
                 "type": "json",
-                "value": "{\"tabulator\":{\"responsiveLayout\":\"collapse\",\"responsiveLayoutCollapseStartOpen\":false,\"index\":\"$name\",\"layout\":\"fitColumns\",\"movableColumns\":true,\"groupBy\":\"\",\"columnResized\":\"function(column){     var newColumn = {         field: column._column.field,         visible: column._column.visible,         width: column._column.width,         widthFixed: column._column.widthFixed,         widthStyled: column._column.widthStyled     }; this.send({topic:this.config.topic,ui_control:{callback:'columnResized',columnWidths:newColumn}}); }\",\"columnMoved\":\"function(column, columns){     var newColumns=[];     columns.forEach(function (column) {         newColumns.push({'field': column._column.definition.field, 'title': column._column.definition.title});     });     this.send({topic:this.config.topic,ui_control:{callback:'columnMoved',columns:newColumns}}); }\",\"rowFormatter\":\"function(row){     var data = row.getData();     switch (data.$state) {         case \\\"lost\\\":             row.getElement().style.backgroundColor = \\\"#9e2e66\\\";             row.getElement().style.color = \\\"#a6a6a6\\\";             break;         case \\\"sleeping\\\":             row.getElement().style.backgroundColor = \\\"#336699\\\";             break;         case \\\"disconnected\\\":             row.getElement().style.backgroundColor = \\\"#cc3300\\\";             row.getElement().style.color = \\\"#a6a6a6\\\";             break;         case \\\"alert\\\":             row.getElement().style.backgroundColor = \\\"#A6A6DF\\\";             break;         case \\\"init\\\":             row.getElement().style.backgroundColor = \\\"#f2f20d\\\";             break;         case \\\"ready\\\":             row.getElement().style.backgroundColor = \\\"\\\";             row.getElement().style.color = \\\"\\\";             break;         } }\",\"columns\":[{\"formatter\":\"responsiveCollapse\",\"width\":30,\"minWidth\":30,\"align\":\"center\",\"resizable\":false,\"headerSort\":false,\"frozen\":true,\"title\":\"expand\",\"field\":\"expand\",\"headerVertical\":\"flip\"},{\"formatter\":\"function(cell, formatterParams, onRendered) {      var html = cell.getValue(); return html;  }\",\"title\":\"State\",\"field\":\"$stateIcon\",\"width\":100,\"frozen\":true,\"headerVertical\":\"flip\"},{\"formatter\":\"function(cell, formatterParams, onRendered) {     var html = cell.getValue(); return html;  }\",\"title\":\"Signal\",\"field\":\"signalIcon\",\"width\":100,\"frozen\":true,\"headerVertical\":\"flip\"},{\"title\":\"Name\",\"field\":\"$name\",\"width\":100,\"frozen\":true,\"headerVertical\":\"flip\"},{\"title\":\"State\",\"field\":\"$state\",\"width\":100,\"align\":\"center\",\"headerVertical\":\"flip\"},{\"title\":\"last-ready\",\"field\":\"lastSeenreadyFormatted\",\"width\":100,\"align\":\"left\",\"headerVertical\":\"flip\"},{\"title\":\"Homie\",\"field\":\"$homie\",\"width\":100,\"align\":\"left\",\"headerVertical\":\"flip\"},{\"title\":\"Platform\",\"field\":\"$implementation\",\"width\":100,\"align\":\"left\",\"headerVertical\":\"flip\"},{\"title\":\"Statistics\",\"columns\":[{\"title\":\"Interval\",\"field\":\"interval\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"outputFormat\":\"d hh:mm:ss\",\"inputFormat\":\"seconds\",\"invalidPlaceholder\":\"(unknown)\"},\"title\":\"Uptime\",\"field\":\"uptime\",\"formatter\":\"function(cell, formatterParams, onRendered){     var pad = function (num) {         return (\\\"0\\\"+num).slice(-2);     };     var secs = Number(cell.getValue());     if (Number.isNaN(secs)) return;     var minutes = Math.floor(secs / 60);     secs = secs%60;     var hours = Math.floor(minutes/60);     minutes = minutes%60;     var days = Math.floor(hours/24);     hours = hours%24;     if (days>0)         return days+\\\"d \\\"+pad(hours)+\\\":\\\"+pad(minutes);     else         return pad(hours)+\\\":\\\"+pad(minutes)+\\\":\\\"+pad(secs); }\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":0,\"max\":100,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) {if (value>0) return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" %</span>\\\"; else return; }\",\"legendColor\":\"#FFFFFF\",\"legendAlign\":\"center\"},\"title\":\"Signal\",\"field\":\"signal\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":2.5,\"max\":3.5,\"color\":[\"red\",\"green\",\"red\"],\"legend\":\"function (value) { if (value>0) return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" V</span>\\\"; else return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Supply\",\"field\":\"supply\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":0,\"max\":100,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) {     if (value>0)         return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" %</span>\\\";     else         return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Battery\",\"field\":\"battery\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":0,\"max\":100000,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) { if (value>0) return \\\"<span style='color:#FFFFFF;'>\\\"+(value/1024).toFixed(2)+\\\" kB</span>\\\"; else return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Memory\",\"field\":\"freeheap\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"target\":\"_blank\",\"min\":0,\"max\":100,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) {     if (value>0)         return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" %</span>\\\";     else         return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"CPU load\",\"field\":\"cpuload\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":20,\"max\":60,\"color\":[\"green\",\"orange\",\"red\"],\"legend\":\"function (value) { if (value>0) return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" ýC</span>\\\"; else return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"CPU temp\",\"field\":\"cputemp\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"}]},{\"title\":\"Firmware\",\"columns\":[{\"formatter\":\"link\",\"formatterParams\":{\"labelField\":\"$localip\",\"urlPrefix\":\"http://\",\"target\":\"_blank\"},\"title\":\"IP\",\"field\":\"$localip\",\"width\":100},{\"title\":\"mac\",\"field\":\"$mac\",\"width\":100},{\"title\":\"Accsess Point\",\"field\":\"SSID\",\"width\":100},{\"title\":\"Firmware\",\"field\":\"name\",\"width\":100},{\"title\":\"Version\",\"field\":\"version\",\"width\":100},{\"title\":\"Last Boot Cause\",\"field\":\"lastBootCause\",\"width\":100},{\"title\":\"Reset Reason\",\"field\":\"resetReason\",\"width\":100}]}]},\"customHeight\":12}",
+                "value": "{\"tabulator\":{\"responsiveLayout\":\"collapse\",\"responsiveLayoutCollapseStartOpen\":false,\"index\":\"$name\",\"layout\":\"fitColumns\",\"movableColumns\":true,\"groupBy\":\"\",\"columnResized\":\"function(column){     var newColumn = {         field: column._column.field,         visible: column._column.visible,         width: column._column.width,         widthFixed: column._column.widthFixed,         widthStyled: column._column.widthStyled     }; this.send({topic:this.config.topic,ui_control:{callback:'columnResized',columnWidths:newColumn}}); }\",\"columnMoved\":\"function(column, columns){     var newColumns=[];     columns.forEach(function (column) {         newColumns.push({'field': column._column.definition.field, 'title': column._column.definition.title});     });     this.send({topic:this.config.topic,ui_control:{callback:'columnMoved',columns:newColumns}}); }\",\"rowFormatter\":\"function(row){     var data = row.getData();     switch (data.$state) {         case \\\"lost\\\":             row.getElement().style.backgroundColor = \\\"#9e2e66\\\";             row.getElement().style.color = \\\"#a6a6a6\\\";             break;         case \\\"sleeping\\\":             row.getElement().style.backgroundColor = \\\"#336699\\\";             break;         case \\\"disconnected\\\":             row.getElement().style.backgroundColor = \\\"#cc3300\\\";             row.getElement().style.color = \\\"#a6a6a6\\\";             break;         case \\\"alert\\\":             row.getElement().style.backgroundColor = \\\"#A6A6DF\\\";             break;         case \\\"init\\\":             row.getElement().style.backgroundColor = \\\"#f2f20d\\\";             break;         case \\\"ready\\\":             row.getElement().style.backgroundColor = \\\"\\\";             row.getElement().style.color = \\\"\\\";             break;         } }\",\"columns\":[{\"formatter\":\"responsiveCollapse\",\"width\":30,\"minWidth\":30,\"align\":\"center\",\"resizable\":false,\"headerSort\":false,\"frozen\":true,\"title\":\"expand\",\"field\":\"expand\",\"headerVertical\":\"flip\"},{\"formatter\":\"function(cell, formatterParams, onRendered) {      var html = cell.getValue(); return html;  }\",\"title\":\"State\",\"field\":\"$stateIcon\",\"width\":100,\"frozen\":true,\"headerVertical\":\"flip\"},{\"formatter\":\"function(cell, formatterParams, onRendered) {     var html = cell.getValue(); return html;  }\",\"title\":\"Signal\",\"field\":\"signalIcon\",\"width\":100,\"frozen\":true,\"headerVertical\":\"flip\"},{\"title\":\"Name\",\"field\":\"$name\",\"width\":100,\"frozen\":true,\"headerVertical\":\"flip\"},{\"title\":\"State\",\"field\":\"$state\",\"width\":100,\"align\":\"center\",\"headerVertical\":\"flip\"},{\"title\":\"last-ready\",\"field\":\"lastSeenreadyFormatted\",\"width\":100,\"align\":\"left\",\"headerVertical\":\"flip\"},{\"title\":\"Homie\",\"field\":\"$homie\",\"width\":100,\"align\":\"left\",\"headerVertical\":\"flip\"},{\"title\":\"Platform\",\"field\":\"$implementation\",\"width\":100,\"align\":\"left\",\"headerVertical\":\"flip\"},{\"title\":\"Statistics\",\"columns\":[{\"title\":\"Interval\",\"field\":\"interval\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"outputFormat\":\"d hh:mm:ss\",\"inputFormat\":\"seconds\",\"invalidPlaceholder\":\"(unknown)\"},\"title\":\"Uptime\",\"field\":\"uptime\",\"formatter\":\"function(cell, formatterParams, onRendered){     var pad = function (num) {         return (\\\"0\\\"+num).slice(-2);     };     var secs = Number(cell.getValue());     if (Number.isNaN(secs)) return;     var minutes = Math.floor(secs / 60);     secs = secs%60;     var hours = Math.floor(minutes/60);     minutes = minutes%60;     var days = Math.floor(hours/24);     hours = hours%24;     if (days>0)         return days+\\\"d \\\"+pad(hours)+\\\":\\\"+pad(minutes);     else         return pad(hours)+\\\":\\\"+pad(minutes)+\\\":\\\"+pad(secs); }\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":0,\"max\":100,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) {if (value>0) return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" %</span>\\\"; else return; }\",\"legendColor\":\"#FFFFFF\",\"legendAlign\":\"center\"},\"title\":\"Signal\",\"field\":\"signal\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":2.5,\"max\":3.5,\"color\":[\"red\",\"green\",\"red\"],\"legend\":\"function (value) { if (value>0) return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" V</span>\\\"; else return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Supply\",\"field\":\"supply\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":0,\"max\":100,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) {     if (value>0)         return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" %</span>\\\";     else         return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Battery\",\"field\":\"battery\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":0,\"max\":100000,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) { if (value>0) return \\\"<span style='color:#FFFFFF;'>\\\"+(value/1024).toFixed(2)+\\\" kB</span>\\\"; else return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Memory\",\"field\":\"freeheap\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"target\":\"_blank\",\"min\":0,\"max\":100,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) {     if (value>0)         return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" %</span>\\\";     else         return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"CPU load\",\"field\":\"cpuload\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"},{\"formatterParams\":{\"min\":20,\"max\":60,\"color\":[\"green\",\"orange\",\"red\"],\"legend\":\"function (value) { if (value>0) return \\\"<span style='color:#FFFFFF;'>\\\"+value+\\\" ï¿½C</span>\\\"; else return; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"CPU temp\",\"field\":\"cputemp\",\"formatter\":\"progress\",\"width\":100,\"headerVertical\":\"flip\"}]},{\"title\":\"Firmware\",\"columns\":[{\"formatter\":\"link\",\"formatterParams\":{\"labelField\":\"$localip\",\"urlPrefix\":\"http://\",\"target\":\"_blank\"},\"title\":\"IP\",\"field\":\"$localip\",\"width\":100},{\"title\":\"mac\",\"field\":\"$mac\",\"width\":100},{\"title\":\"Accsess Point\",\"field\":\"SSID\",\"width\":100},{\"title\":\"Firmware\",\"field\":\"name\",\"width\":100},{\"title\":\"Version\",\"field\":\"version\",\"width\":100},{\"title\":\"Last Boot Cause\",\"field\":\"lastBootCause\",\"width\":100},{\"title\":\"Reset Reason\",\"field\":\"resetReason\",\"width\":100}]}]},\"customHeight\":12}",
                 "ui": {
                     "icon": "font-awesome/fa-table",
                     "label": {
@@ -787,7 +787,7 @@
         "type": "comment",
         "z": "3c1975f87cd0cabf",
         "name": "GitHub Token",
-        "info": "Set GITHUB_TOKEN in [Heroku Config Vars](https://dashboard.heroku.com/apps/nric-temp/settings).\nSee [Personal access tokens](https://github.com/settings/tokens) page (repo).",
+        "info": "Set GITHUB_TOKEN in [Heroku Config Vars](https://dashboard.heroku.com/apps/nodered-in-cloud/settings).\nSee [Personal access tokens](https://github.com/settings/tokens) page (repo).",
         "x": 370,
         "y": 40,
         "wires": []
@@ -1129,7 +1129,7 @@
         "type": "comment",
         "z": "3c1975f87cd0cabf",
         "name": "Heroku",
-        "info": "https://dashboard.heroku.com/apps/nric-temp",
+        "info": "https://dashboard.heroku.com/apps/nodered-in-cloud",
         "x": 850,
         "y": 500,
         "wires": []
@@ -1143,7 +1143,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Dashboard: https://nric-temp.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com/apps/nric-temp\nHome: https://nric-temp.herokuapp.com\nNode-RED: https://nric-temp.herokuapp.com/editor",
+        "template": "Dashboard: https://nodered-in-cloud.herokuapp.com/ui\nHeroku: https://dashboard.heroku.com/apps/nodered-in-cloud\nHome: https://nodered-in-cloud.herokuapp.com\nNode-RED: https://nodered-in-cloud.herokuapp.com/editor",
         "output": "str",
         "x": 720,
         "y": 360,
@@ -1375,7 +1375,7 @@
         "type": "comment",
         "z": "3c1975f87cd0cabf",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 760,
         "y": 380,
         "wires": []
@@ -1537,7 +1537,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nric-temp.herokuapp.com/sensor",
+        "url": "http://nodered-in-cloud.herokuapp.com/sensor",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -1560,7 +1560,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nric-temp.herokuapp.com/counter",
+        "url": "http://nodered-in-cloud.herokuapp.com/counter",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -1583,7 +1583,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nric-temp.herokuapp.com/heartbeat",
+        "url": "http://nodered-in-cloud.herokuapp.com/heartbeat",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -1721,7 +1721,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nric-temp.herokuapp.com/sinusoid",
+        "url": "http://nodered-in-cloud.herokuapp.com/sinusoid",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -1940,7 +1940,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nric-temp.herokuapp.com/sinusoid",
+        "url": "http://nodered-in-cloud.herokuapp.com/sinusoid",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -2043,7 +2043,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nric-temp.herokuapp.com/sensor",
+        "url": "http://nodered-in-cloud.herokuapp.com/sensor",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -2065,7 +2065,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://nric-temp.herokuapp.com/alarm",
+        "url": "http://nodered-in-cloud.herokuapp.com/alarm",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -2494,7 +2494,7 @@
         "z": "cdd0d95b0f6f8604",
         "g": "8ae85c804dc630f2",
         "name": "!! ELIMINAMI !!",
-        "func": "msg.payload.api = msg.payload.api.replace(\"node-red-in-cloud\", \"nric-temp\");\nreturn msg;",
+        "func": "msg.payload.api = msg.payload.api.replace(\"node-red-in-cloud\", \"nodered-in-cloud\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2513,7 +2513,7 @@
         "type": "comment",
         "z": "cdd0d95b0f6f8604",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 420,
         "y": 140,
         "wires": []
@@ -2523,7 +2523,7 @@
         "type": "comment",
         "z": "cdd0d95b0f6f8604",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 420,
         "y": 100,
         "wires": []
@@ -2533,7 +2533,7 @@
         "type": "comment",
         "z": "cdd0d95b0f6f8604",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 660,
         "y": 320,
         "wires": []
@@ -2543,7 +2543,7 @@
         "type": "comment",
         "z": "cdd0d95b0f6f8604",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 660,
         "y": 380,
         "wires": []
@@ -2553,7 +2553,7 @@
         "type": "comment",
         "z": "cdd0d95b0f6f8604",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 660,
         "y": 440,
         "wires": []
@@ -2563,7 +2563,7 @@
         "type": "comment",
         "z": "cdd0d95b0f6f8604",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 660,
         "y": 500,
         "wires": []
@@ -2573,7 +2573,7 @@
         "type": "comment",
         "z": "cdd0d95b0f6f8604",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 660,
         "y": 560,
         "wires": []
@@ -2584,7 +2584,7 @@
         "z": "cdd0d95b0f6f8604",
         "g": "8ae85c804dc630f2",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 380,
         "y": 540,
         "wires": []
@@ -4379,7 +4379,7 @@
                 "t": "set",
                 "p": "link",
                 "pt": "msg",
-                "to": "https://nric-temp.herokuapp.com",
+                "to": "https://nodered-in-cloud.herokuapp.com",
                 "tot": "str"
             },
             {
@@ -4800,7 +4800,7 @@
         "type": "comment",
         "z": "d405d0aa94060361",
         "name": "!! ATTENZIONE !!",
-        "info": "Cambia `nric-temp.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
+        "info": "Cambia `nodered-in-cloud.herokuapp.com` in\n`node-red-in-cloud.herokuapp.com` qui e in\n[App Scripts](https://script.google.com/home/)\n(hybuild.project@gmail.com).",
         "x": 380,
         "y": 180,
         "wires": []

@@ -19,8 +19,6 @@ var path = require('path');
 var when = require('when');
 
 process.env.HOSTNAME = require('os').hostname();
-//process.env.BOT_TOKEN = "2097247350:AAHvGZR34e34Y0MjKtvFRFLs1qcysirD2rA";
-//... useless... use Config Vars in Heroku Dashboard | Settings, instead!
 
 /**
  * This is the default settings file provided by Node-RED.

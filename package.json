@@ -34,6 +34,7 @@
         "node-red-contrib-qrcode-generator": "latest",
         "node-red-contrib-re-postgres": "latest",
         "node-red-contrib-string": "latest",
+        "node-red-contrib-telegrambot": "latest",
         "node-red-contrib-telegrambot-home": "latest",
         "node-red-contrib-ui-led": "latest",
         "node-red-contrib-ui-media": "latest",

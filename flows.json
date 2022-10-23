@@ -8,6 +8,90 @@
         "env": []
     },
     {
+        "id": "45efa3d25bb16f76",
+        "type": "telegram bot",
+        "botname": "Prueba2",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false,
+        "info": "5794445331:AAFpeJo_DW6WrETg-e3NsgDgcrRdSK1zKX0"
+    },
+    {
+        "id": "9f7c70a3d88d7311",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.61.139",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "1000",
+        "timeout": "2000",
+        "name": "entrada",
+        "vartable": [
+            {
+                "addr": "M0.0",
+                "name": "botStart"
+            },
+            {
+                "addr": "Q0.6",
+                "name": "boxFider"
+            },
+            {
+                "addr": "Q1.1",
+                "name": "loadBelt"
+            }
+        ]
+    },
+    {
+        "id": "fceadb64b7fed363",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.61.139",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "1000",
+        "timeout": "2000",
+        "name": "",
+        "vartable": [
+            {
+                "addr": "M0.1",
+                "name": "botStop"
+            }
+        ]
+    },
+    {
         "id": "74e096f7391a8c7e",
         "type": "telegram receiver",
         "z": "33bea8c41fb3a22b",
@@ -224,30 +308,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "45efa3d25bb16f76",
-        "type": "telegram bot",
-        "botname": "Prueba2",
-        "usernames": "",
-        "chatids": "",
-        "baseapiurl": "",
-        "updatemode": "polling",
-        "pollinterval": "300",
-        "usesocks": false,
-        "sockshost": "",
-        "socksprotocol": "socks5",
-        "socksport": "6667",
-        "socksusername": "anonymous",
-        "sockspassword": "",
-        "bothost": "",
-        "botpath": "",
-        "localbotport": "8443",
-        "publicbotport": "8443",
-        "privatekey": "",
-        "certificate": "",
-        "useselfsignedcertificate": false,
-        "sslterminated": false,
-        "verboselogging": false
     }
 ]
